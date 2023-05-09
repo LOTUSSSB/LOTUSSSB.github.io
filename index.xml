@@ -10,7 +10,16 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 06 May 2023 22:00:08 +0800</lastBuildDate><atom:link href="https://blog.lotusssb.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 May 2023 14:49:59 +0800</lastBuildDate><atom:link href="https://blog.lotusssb.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MySQL学习</title>
+      <link>https://blog.lotusssb.com/post/MySQL%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Tue, 09 May 2023 14:49:59 +0800</pubDate>
+      
+      <guid>https://blog.lotusssb.com/post/MySQL%E5%AD%A6%E4%B9%A0/</guid>
+      <description>MySQL学习 数据库相关知识 数据库的分类 关系型数据库:经过数学理论验证,可以将现实生活中存在的各种关系,保存到数据库中,这种数据库 称为关系型</description>
+    </item>
+    
     <item>
       <title>Flask学习</title>
       <link>https://blog.lotusssb.com/post/Flask%E5%AD%A6%E4%B9%A0/</link>
