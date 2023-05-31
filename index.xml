@@ -10,7 +10,16 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 09 May 2023 14:49:59 +0800</lastBuildDate><atom:link href="https://blog.lotusssb.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 31 May 2023 15:45:39 +0800</lastBuildDate><atom:link href="https://blog.lotusssb.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AutoGPT体验</title>
+      <link>https://blog.lotusssb.com/post/AutoGPT%E4%BD%93%E9%AA%8C/</link>
+      <pubDate>Wed, 31 May 2023 15:45:39 +0800</pubDate>
+      
+      <guid>https://blog.lotusssb.com/post/AutoGPT%E4%BD%93%E9%AA%8C/</guid>
+      <description>AutoGPT体验 安装AutoGPT 我使用虚拟环境来创建这个项目，所以首先要激活虚拟环境，然后安装AutoGPT，安装完成后，就可以使用了。</description>
+    </item>
+    
     <item>
       <title>MySQL学习</title>
       <link>https://blog.lotusssb.com/post/MySQL%E5%AD%A6%E4%B9%A0/</link>
