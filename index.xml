@@ -10,7 +10,16 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 31 May 2023 15:45:39 +0800</lastBuildDate><atom:link href="https://blog.lotusssb.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Jun 2023 00:16:45 +0800</lastBuildDate><atom:link href="https://blog.lotusssb.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RSS折腾</title>
+      <link>https://blog.lotusssb.com/post/RSS%E6%8A%98%E8%85%BE/</link>
+      <pubDate>Thu, 08 Jun 2023 00:16:45 +0800</pubDate>
+      
+      <guid>https://blog.lotusssb.com/post/RSS%E6%8A%98%E8%85%BE/</guid>
+      <description>在这个信息爆炸的时代，我越来越感觉到简单信息聚合对个人的重要性， 而RSS(Really Simple Syndication)就成为了我的目标 RSS折腾经</description>
+    </item>
+    
     <item>
       <title>AutoGPT体验</title>
       <link>https://blog.lotusssb.com/post/AutoGPT%E4%BD%93%E9%AA%8C/</link>
