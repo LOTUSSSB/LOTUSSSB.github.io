@@ -3,12 +3,15 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.lotusssb.com/</loc>
-    <lastmod>2023-06-08T00:16:45+08:00</lastmod>
+    <lastmod>2023-06-10T00:34:24+08:00</lastmod>
   </url><url>
     <loc>https://blog.lotusssb.com/post/</loc>
-    <lastmod>2023-06-08T00:16:45+08:00</lastmod>
+    <lastmod>2023-06-10T00:34:24+08:00</lastmod>
   </url><url>
-    <loc>https://blog.lotusssb.com/post/RSS%E6%8A%98%E8%85%BE/</loc>
+    <loc>https://blog.lotusssb.com/post/%E9%9A%8F%E4%BE%BF%E8%AE%B0%E7%82%B9/</loc>
+    <lastmod>2023-06-10T00:34:24+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.lotusssb.com/post/RSS%E6%8A%98%E8%85%BE%E5%B0%8F%E8%AE%B0/</loc>
     <lastmod>2023-06-08T00:16:45+08:00</lastmod>
   </url><url>
     <loc>https://blog.lotusssb.com/post/AutoGPT%E4%BD%93%E9%AA%8C/</loc>
