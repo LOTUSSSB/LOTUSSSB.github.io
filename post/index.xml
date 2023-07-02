@@ -10,7 +10,16 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 21 Jun 2023 10:21:54 +0800</lastBuildDate><atom:link href="https://blog.lotusssb.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 02 Jul 2023 22:18:02 +0800</lastBuildDate><atom:link href="https://blog.lotusssb.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用Linux命名空间、cgroups和chroot构建您自己的Docker：实践指南</title>
+      <link>https://blog.lotusssb.com/post/%E6%9E%84%E5%BB%BA%E6%82%A8%E8%87%AA%E5%B7%B1%E7%9A%84Docker/</link>
+      <pubDate>Sun, 02 Jul 2023 22:18:02 +0800</pubDate>
+      
+      <guid>https://blog.lotusssb.com/post/%E6%9E%84%E5%BB%BA%E6%82%A8%E8%87%AA%E5%B7%B1%E7%9A%84Docker/</guid>
+      <description>转载自：https://akashrajpurohit.com/blog/build-your-own-docker-with-linux-</description>
+    </item>
+    
     <item>
       <title>WSL</title>
       <link>https://blog.lotusssb.com/post/WSL%E4%BD%BF%E7%94%A8/</link>
