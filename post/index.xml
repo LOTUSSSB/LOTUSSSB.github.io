@@ -10,7 +10,16 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 24 Aug 2023 18:45:54 +0800</lastBuildDate><atom:link href="https://blog.lotusssb.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Sep 2023 00:08:57 +0800</lastBuildDate><atom:link href="https://blog.lotusssb.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>记录一次NGINX的错误</title>
+      <link>https://blog.lotusssb.com/post/NGINX%E9%94%99%E8%AF%AF/</link>
+      <pubDate>Sun, 24 Sep 2023 00:08:57 +0800</pubDate>
+      
+      <guid>https://blog.lotusssb.com/post/NGINX%E9%94%99%E8%AF%AF/</guid>
+      <description>问题复现 在网络中，发现css和js都正常加载了，但是在实际加载的网页中，只有front正常加载，css和js 大概就是这种效果（悲 我的ngin</description>
+    </item>
+    
     <item>
       <title>Go学习</title>
       <link>https://blog.lotusssb.com/post/Go%E5%AD%A6%E4%B9%A0/</link>
