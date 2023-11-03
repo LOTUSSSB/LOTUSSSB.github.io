@@ -10,7 +10,16 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 24 Sep 2023 00:08:57 +0800</lastBuildDate><atom:link href="https://blog.lotusssb.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Nov 2023 22:53:54 +0800</lastBuildDate><atom:link href="https://blog.lotusssb.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Web3?(未完待续</title>
+      <link>https://blog.lotusssb.com/post/Web3-developer/Web3-%E5%BC%80%E5%8F%91/</link>
+      <pubDate>Fri, 03 Nov 2023 22:53:54 +0800</pubDate>
+      
+      <guid>https://blog.lotusssb.com/post/Web3-developer/Web3-%E5%BC%80%E5%8F%91/</guid>
+      <description>看着DIYGOD大佬的xLog，不禁心痒痒，我能不能也开发个基于web3技术的项目？ 想到了不错的点子，能实现吗，总感觉这个项目相当庞大，而且</description>
+    </item>
+    
     <item>
       <title>记录一次NGINX的错误</title>
       <link>https://blog.lotusssb.com/post/NGINX%E9%94%99%E8%AF%AF/</link>
