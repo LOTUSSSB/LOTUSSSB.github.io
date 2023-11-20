@@ -1,0 +1,276 @@
+<!doctype html><html lang=zh dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>数据结构笔记 | LOTUS BLOG</title><meta name=keywords content><meta name=description content="绪论 数据元素 1 **数据项构成数据元素的最小单位**，一个数据集元素可以有多个数据项 数据对象 1 【定义】具有相同性质的数据元素的集合，是数据的一"><meta name=author content="LOTU$"><link rel=canonical href=https://blog.lotusssb.com/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script><meta name=referrer content="no-referrer-when-downgrade"><link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.min.b95bacdc39e37a332a9f883b1e78be4abc1fdca2bc1f2641f55e3cd3dabd4d61.js integrity="sha256-uVus3DnjejMqn4g7Hni+Srwf3KK8HyZB9V4809q9TWE=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://blog.lotusssb.com/%3C/favicon.ico%3E><link rel=icon type=image/png sizes=16x16 href=https://blog.lotusssb.com/favicon-16x16.png%3E><link rel=icon type=image/png sizes=32x32 href=https://blog.lotusssb.com/favicon-32x32.png><link rel=apple-touch-icon href=https://blog.lotusssb.com/apple-touch-icon.png><link rel=mask-icon href=https://blog.lotusssb.com/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><meta name=generator content="Hugo 0.110.0"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-123-45","auto"),ga("send","pageview"))</script><meta property="og:title" content="数据结构笔记"><meta property="og:description" content="绪论 数据元素 1 **数据项构成数据元素的最小单位**，一个数据集元素可以有多个数据项 数据对象 1 【定义】具有相同性质的数据元素的集合，是数据的一"><meta property="og:type" content="article"><meta property="og:url" content="https://blog.lotusssb.com/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><meta property="og:image" content="https://blog.lotusssb.com/papermod-cover.png"><meta property="article:section" content="post"><meta property="article:published_time" content="2023-11-20T10:41:34+08:00"><meta property="article:modified_time" content="2023-11-20T10:41:34+08:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://blog.lotusssb.com/papermod-cover.png"><meta name=twitter:title content="数据结构笔记"><meta name=twitter:description content="绪论 数据元素 1 **数据项构成数据元素的最小单位**，一个数据集元素可以有多个数据项 数据对象 1 【定义】具有相同性质的数据元素的集合，是数据的一"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://blog.lotusssb.com/post/"},{"@type":"ListItem","position":2,"name":"数据结构笔记","item":"https://blog.lotusssb.com/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"数据结构笔记","name":"数据结构笔记","description":"绪论 数据元素 1 **数据项构成数据元素的最小单位**，一个数据集元素可以有多个数据项 数据对象 1 【定义】具有相同性质的数据元素的集合，是数据的一","keywords":[],"articleBody":"绪论 数据元素 1 **数据项构成数据元素的最小单位**，一个数据集元素可以有多个数据项 数据对象 1 【定义】具有相同性质的数据元素的集合，是数据的一个子集【例】所有学生的信息可以作为一个数据对象。 数据类型 1 2 【定义】是一组值的集合和定义在该集合上的操作的总和。 其中有原子类型（不可再分割）、结构类型（多个原子类型值的组合）、抽象数据类型 数据结构 1 2 3 【定义】数据结构是相互之间存在一种或多种特定关系的数据元素的集合。 有相互的关系的数据集合 数据结构三要素\n数据的逻辑结构\n集合 线性结构 树形结构 图形结构 数据的存储结构 顺序存储 顺序存储结构：把数据元素放到地址连续的存储单元里面，其数据间的逻辑关系和物理关系是一致的。\n链式存储 链式存储结构：把数据元素放到任意的存储单元里面，这组存储单元可以是连续的，也可以是不连续的。\n索引存储 索引存储结构：在存储数据的同时，还建立附加的索引表，索引表中的每个元素都含有该数据元素在存储器中的地址。\n逻辑关系通过指针表示\n散列存储(哈希存储) 散列存储结构：根据关键字直接计算出该数据元素的存储地址，即地址= f(关键字)。 比特币的挖矿就是用的散列存储结构。\n复杂度 时间复杂度 时间复杂度：一个算法执行所耗费的时间。\n常数阶O(1) 这种与问题规模的大小无关（n的多少），执行时间恒定的算法，O（1）时间复杂度，又叫做常数阶复杂度。\n1 2 3 int sum = 0, n = 100; /*执行一次*/ sum = (1 + n) * n / 2; /*执行一次*/ printf(\"%d\\n\", sum); /*执行一次*/ 线性阶O(n) 1 2 3 for (i = 0; i \u003c n; i++) { /*执行n次*/ printf(\"%d\\n\", i); /*执行n次*/ } 对数阶O(log2n) 1 2 3 4 5 int count = 1; while (count \u003c n) { /*执行log2n次*/ count = count * 2; /*执行log2n次*/ } 由于每次count乘以2之后，就距离n更近了一分。也就是说，有多少个2相乘后大于n，则会退出循环。由2＾x＝n 得到x＝1og2（n）。所以这个循环的时间复杂度\n平方阶O(n＾2) 1 2 3 4 5 6 int i, j; for (i = 0; i \u003c n; i++) { /*执行n次*/ for (j = 0; j \u003c n; j++) { /*执行n次*/ printf(\"%d %d\\n\", i, j); /*执行n*n次*/ } } 推导时间复杂度的方法 当运行时间只有常数时，则用1来代替。\n在得到的运行次数函数中，只【保留最高阶】，且【除去最高阶项中相乘的常数】\n1 执行次数函数为3n＾2＋2n＋1，则时间复杂度为O(n＾2) 常见的时间复杂度 空间复杂度 是对一个算法在运行过程中临时占用存储空间大小的量度\n空间复杂度算的是变量的个数\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 void BubbkeSort(int* a,int n) { assert(a); for(size_t end=n;end\u003e0;--end) { int exchange=0; for(size_t i=1;i","wordCount":"2199","inLanguage":"zh","datePublished":"2023-11-20T10:41:34+08:00","dateModified":"2023-11-20T10:41:34+08:00","author":{"@type":"Person","name":"LOTU$"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.lotusssb.com/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"},"publisher":{"@type":"Organization","name":"LOTUS BLOG","logo":{"@type":"ImageObject","url":"https://blog.lotusssb.com/%3C/favicon.ico%3E"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://blog.lotusssb.com/ accesskey=h title="LOTUS BLOG (Alt + H)">LOTUS BLOG</a>
+<span class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></span></div><ul id=menu><li><a href=https://blog.lotusssb.com/search/ title="搜索 (Alt + /)" accesskey=/><span>搜索</span></a></li><li><a href=https://blog.lotusssb.com/tags/ title=标签><span>标签</span></a></li><li><a href=https://blog.lotusssb.com/archives/ title=归档><span>归档</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://blog.lotusssb.com/>主页</a>&nbsp;»&nbsp;<a href=https://blog.lotusssb.com/post/>Posts</a></div><h1 class=post-title>数据结构笔记<sup><span class=entry-isdraft>&nbsp;&nbsp;[draft]</span></sup></h1><div class=post-meta><span title='2023-11-20 10:41:34 +0800 CST'>十一月 20, 2023</span>&nbsp;·&nbsp;5 分钟&nbsp;·&nbsp;LOTU$</div></header><div class=toc><details open><summary accesskey=c title="(Alt + C)"><span class=details>目录</span></summary><div class=inner><ul><li><a href=#%e7%bb%aa%e8%ae%ba aria-label=绪论>绪论</a><ul><ul><li><a href=#%e6%95%b0%e6%8d%ae%e5%85%83%e7%b4%a0 aria-label=数据元素>数据元素</a></li><li><a href=#%e6%95%b0%e6%8d%ae%e5%af%b9%e8%b1%a1 aria-label=数据对象>数据对象</a></li><li><a href=#%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b aria-label=数据类型>数据类型</a></li><li><a href=#%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84 aria-label=数据结构>数据结构</a></li><li><a href=#%e6%95%b0%e6%8d%ae%e7%9a%84%e5%ad%98%e5%82%a8%e7%bb%93%e6%9e%84 aria-label=数据的存储结构>数据的存储结构</a><ul><li><a href=#%e9%a1%ba%e5%ba%8f%e5%ad%98%e5%82%a8 aria-label=顺序存储>顺序存储</a></li><li><a href=#%e9%93%be%e5%bc%8f%e5%ad%98%e5%82%a8 aria-label=链式存储>链式存储</a></li><li><a href=#%e7%b4%a2%e5%bc%95%e5%ad%98%e5%82%a8 aria-label=索引存储>索引存储</a></li><li><a href=#%e6%95%a3%e5%88%97%e5%ad%98%e5%82%a8%e5%93%88%e5%b8%8c%e5%ad%98%e5%82%a8 aria-label=散列存储(哈希存储)>散列存储(哈希存储)</a></li></ul></li></ul><li><a href=#%e5%a4%8d%e6%9d%82%e5%ba%a6 aria-label=复杂度>复杂度</a><ul><li><a href=#%e6%97%b6%e9%97%b4%e5%a4%8d%e6%9d%82%e5%ba%a6 aria-label=时间复杂度>时间复杂度</a><ul><li><a href=#%e5%b8%b8%e6%95%b0%e9%98%b6o1 aria-label=常数阶O(1)>常数阶O(1)</a></li><li><a href=#%e7%ba%bf%e6%80%a7%e9%98%b6on aria-label=线性阶O(n)>线性阶O(n)</a></li><li><a href=#%e5%af%b9%e6%95%b0%e9%98%b6olog2n aria-label=对数阶O(log2n)>对数阶O(log2n)</a></li><li><a href=#%e5%b9%b3%e6%96%b9%e9%98%b6on2 aria-label=平方阶O(n＾2)>平方阶O(n＾2)</a></li><li><a href=#%e6%8e%a8%e5%af%bc%e6%97%b6%e9%97%b4%e5%a4%8d%e6%9d%82%e5%ba%a6%e7%9a%84%e6%96%b9%e6%b3%95 aria-label=推导时间复杂度的方法>推导时间复杂度的方法</a></li><li><a href=#%e5%b8%b8%e8%a7%81%e7%9a%84%e6%97%b6%e9%97%b4%e5%a4%8d%e6%9d%82%e5%ba%a6 aria-label=常见的时间复杂度>常见的时间复杂度</a></li></ul></li><li><a href=#%e7%a9%ba%e9%97%b4%e5%a4%8d%e6%9d%82%e5%ba%a6 aria-label=空间复杂度>空间复杂度</a><ul><li><a href=#o1%e5%92%8con%e7%9a%84%e5%8c%ba%e5%88%ab aria-label=O(1)和O(n)的区别>O(1)和O(n)的区别</a></li><li><a href=#%e9%98%b6%e4%b9%98%e9%80%92%e5%bd%92fac%e7%9a%84%e7%a9%ba%e9%97%b4%e5%a4%8d%e6%9d%82%e5%ba%a6 aria-label=阶乘递归Fac的空间复杂度>阶乘递归Fac的空间复杂度</a></li></ul></li></ul></li><li><a href=#%e7%ba%bf%e6%80%a7%e8%a1%a8 aria-label=线性表>线性表</a><ul><li><a href=#%e9%a1%ba%e5%ba%8f%e8%a1%a8%e6%95%b0%e7%bb%84 aria-label=顺序表(数组)>顺序表(数组)</a><ul><li><a href=#%e9%a1%ba%e5%ba%8f%e8%a1%a8%e5%9f%ba%e6%9c%ac%e6%93%8d%e4%bd%9c%e5%8a%9f%e8%83%bd%e5%ae%9e%e7%8e%b0 aria-label=顺序表基本操作功能实现>顺序表基本操作功能实现</a></li><li><a href=#%e7%ba%bf%e6%80%a7%e8%a1%a8%e7%9a%84%e9%9d%99%e6%80%81%e5%ae%9a%e4%b9%89 aria-label=线性表的静态定义>线性表的静态定义</a></li><li><a href=#%e7%ba%bf%e6%80%a7%e8%a1%a8%e7%9a%84%e9%9d%99%e6%80%81%e5%88%9d%e5%a7%8b%e5%8c%96 aria-label=线性表的静态初始化>线性表的静态初始化</a></li><li><a href=#%e7%ba%bf%e6%80%a7%e8%a1%a8%e7%9a%84%e6%8f%92%e5%85%a5 aria-label=线性表的插入>线性表的插入</a></li><li><a href=#%e7%ba%bf%e6%80%a7%e8%a1%a8%e7%9a%84%e5%88%a0%e9%99%a4 aria-label=线性表的删除>线性表的删除</a></li><li><a href=#%e7%ba%bf%e6%80%a7%e8%a1%a8%e7%9a%84%e6%8c%89%e7%b4%a2%e5%bc%95%e6%9f%a5%e6%89%be aria-label=线性表的按索引查找>线性表的按索引查找</a></li><li><a href=#%e7%ba%bf%e6%80%a7%e8%a1%a8%e7%9a%84%e6%8c%89%e5%80%bc%e6%9f%a5%e6%89%be aria-label=线性表的按值查找>线性表的按值查找</a></li><li><a href=#%e5%8a%a8%e6%80%81%e5%a2%9e%e9%95%bf%e5%86%85%e5%ad%98 aria-label=动态增长内存>动态增长内存</a></li></ul></li></ul></li></ul></li></ul></div></details></div><div class=post-content><h1 id=绪论>绪论<a hidden class=anchor aria-hidden=true href=#绪论>#</a></h1><h3 id=数据元素>数据元素<a hidden class=anchor aria-hidden=true href=#数据元素>#</a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>**数据项构成数据元素的最小单位**，一个数据集元素可以有多个数据项
+</span></span></code></pre></td></tr></table></div></div><h3 id=数据对象>数据对象<a hidden class=anchor aria-hidden=true href=#数据对象>#</a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>【定义】具有相同性质的数据元素的集合，是数据的一个子集【例】所有学生的信息可以作为一个数据对象。
+</span></span></code></pre></td></tr></table></div></div><h3 id=数据类型>数据类型<a hidden class=anchor aria-hidden=true href=#数据类型>#</a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>【定义】是一组值的集合和定义在该集合上的操作的总和。
+</span></span><span class=line><span class=cl>其中有原子类型（不可再分割）、结构类型（多个原子类型值的组合）、抽象数据类型
+</span></span></code></pre></td></tr></table></div></div><h3 id=数据结构>数据结构<a hidden class=anchor aria-hidden=true href=#数据结构>#</a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>【定义】数据结构是相互之间存在一种或多种特定关系的数据元素的集合。
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>有相互的关系的数据集合
+</span></span></code></pre></td></tr></table></div></div><p><img loading=lazy src=20231120110331.png alt></p><p>数据结构三要素</p><p><img loading=lazy src=20231120110519.png alt></p><p>数据的逻辑结构</p><ol><li>集合</li><li>线性结构</li><li>树形结构</li><li>图形结构</li></ol><h3 id=数据的存储结构>数据的存储结构<a hidden class=anchor aria-hidden=true href=#数据的存储结构>#</a></h3><p><img loading=lazy src=20231120110920.png alt></p><h4 id=顺序存储>顺序存储<a hidden class=anchor aria-hidden=true href=#顺序存储>#</a></h4><p>顺序存储结构：把数据元素放到地址连续的<strong>存储单元</strong>里面，其数据间的逻辑关系和物理关系是一致的。</p><p><img loading=lazy src=20231120111050.png alt></p><h4 id=链式存储>链式存储<a hidden class=anchor aria-hidden=true href=#链式存储>#</a></h4><p>链式存储结构：把数据元素放到任意的存储单元里面，这组存储单元可以是连续的，也可以是不连续的。</p><p><img loading=lazy src=20231120111214.png alt></p><h4 id=索引存储>索引存储<a hidden class=anchor aria-hidden=true href=#索引存储>#</a></h4><p>索引存储结构：在存储数据的同时，还建立附加的索引表，索引表中的每个元素都含有<strong>该数据元素在存储器中的地址</strong>。</p><p><strong>逻辑关系通过指针表示</strong></p><p><img loading=lazy src=20231120111245.png alt></p><h4 id=散列存储哈希存储>散列存储(哈希存储)<a hidden class=anchor aria-hidden=true href=#散列存储哈希存储>#</a></h4><p>散列存储结构：根据<strong>关键字</strong>直接计算出该数据元素的存储地址，即地址= f(关键字)。 <strong>比特币的挖矿就是用的散列存储结构。</strong></p><p><img loading=lazy src=20231120111354.png alt></p><h2 id=复杂度>复杂度<a hidden class=anchor aria-hidden=true href=#复杂度>#</a></h2><h3 id=时间复杂度>时间复杂度<a hidden class=anchor aria-hidden=true href=#时间复杂度>#</a></h3><p>时间复杂度：一个算法执行所耗费的时间。</p><h4 id=常数阶o1>常数阶O(1)<a hidden class=anchor aria-hidden=true href=#常数阶o1>#</a></h4><p>这种与问题规模的大小无关（n的多少），执行时间恒定的算法，O（1）时间复杂度，又叫做常数阶复杂度。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>int <span class=nv>sum</span> <span class=o>=</span> 0, <span class=nv>n</span> <span class=o>=</span> 100<span class=p>;</span> /*执行一次*/
+</span></span><span class=line><span class=cl><span class=nv>sum</span> <span class=o>=</span> <span class=o>(</span><span class=m>1</span> + n<span class=o>)</span> * n / 2<span class=p>;</span> /*执行一次*/
+</span></span><span class=line><span class=cl>printf<span class=o>(</span><span class=s2>&#34;%d\n&#34;</span>, sum<span class=o>)</span><span class=p>;</span> /*执行一次*/
+</span></span></code></pre></td></tr></table></div></div><h4 id=线性阶on>线性阶O(n)<a hidden class=anchor aria-hidden=true href=#线性阶on>#</a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl><span class=k>for</span> <span class=o>(</span><span class=nv>i</span> <span class=o>=</span> 0<span class=p>;</span> i &lt; n<span class=p>;</span> i++<span class=o>)</span> <span class=o>{</span> /*执行n次*/
+</span></span><span class=line><span class=cl>    printf<span class=o>(</span><span class=s2>&#34;%d\n&#34;</span>, i<span class=o>)</span><span class=p>;</span> /*执行n次*/
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=对数阶olog2n>对数阶O(log2n)<a hidden class=anchor aria-hidden=true href=#对数阶olog2n>#</a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>int <span class=nv>count</span> <span class=o>=</span> 1<span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=k>while</span> <span class=o>(</span>count &lt; n<span class=o>)</span> <span class=o>{</span> /*执行log2n次*/
+</span></span><span class=line><span class=cl>    <span class=nv>count</span> <span class=o>=</span> count * 2<span class=p>;</span>
+</span></span><span class=line><span class=cl>    /*执行log2n次*/
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>由于每次count乘以2之后，就距离n更近了一分。也就是说，有多少个2相乘后大于n，则会退出循环。由2＾x＝n 得到x＝1og2（n）。所以这个循环的时间复杂度</p><h4 id=平方阶on2>平方阶O(n＾2)<a hidden class=anchor aria-hidden=true href=#平方阶on2>#</a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>int i, j<span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=k>for</span> <span class=o>(</span><span class=nv>i</span> <span class=o>=</span> 0<span class=p>;</span> i &lt; n<span class=p>;</span> i++<span class=o>)</span> <span class=o>{</span> /*执行n次*/
+</span></span><span class=line><span class=cl>    <span class=k>for</span> <span class=o>(</span><span class=nv>j</span> <span class=o>=</span> 0<span class=p>;</span> j &lt; n<span class=p>;</span> j++<span class=o>)</span> <span class=o>{</span> /*执行n次*/
+</span></span><span class=line><span class=cl>        printf<span class=o>(</span><span class=s2>&#34;%d %d\n&#34;</span>, i, j<span class=o>)</span><span class=p>;</span> /*执行n*n次*/
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=推导时间复杂度的方法>推导时间复杂度的方法<a hidden class=anchor aria-hidden=true href=#推导时间复杂度的方法>#</a></h4><ol><li><p>当运行时间只有常数时，则用1来代替。</p></li><li><p>在得到的运行次数函数中，只【保留最高阶】，且【除去最高阶项中相乘的常数】</p></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>执行次数函数为3n＾2＋2n＋1，则时间复杂度为O<span class=o>(</span>n＾2<span class=o>)</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=常见的时间复杂度>常见的时间复杂度<a hidden class=anchor aria-hidden=true href=#常见的时间复杂度>#</a></h4><p><img loading=lazy src=20231120112940.png alt></p><h3 id=空间复杂度>空间复杂度<a hidden class=anchor aria-hidden=true href=#空间复杂度>#</a></h3><p>是对<strong>一个算法在运行过程中临时占用存储空间大小的量度</strong></p><p>空间复杂度算的是变量的个数</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>void BubbkeSort<span class=o>(</span>int* a,int n<span class=o>)</span>
+</span></span><span class=line><span class=cl><span class=o>{</span>
+</span></span><span class=line><span class=cl>    assert<span class=o>(</span>a<span class=o>)</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span><span class=o>(</span>size_t <span class=nv>end</span><span class=o>=</span>n<span class=p>;</span>end&gt;0<span class=p>;</span>--end<span class=o>)</span>
+</span></span><span class=line><span class=cl>    <span class=o>{</span>
+</span></span><span class=line><span class=cl>        int <span class=nv>exchange</span><span class=o>=</span>0<span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=k>for</span><span class=o>(</span>size_t <span class=nv>i</span><span class=o>=</span>1<span class=p>;</span>i&lt;end<span class=p>;</span>++i<span class=o>)</span>
+</span></span><span class=line><span class=cl>        <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span><span class=o>(</span>a<span class=o>[</span>i-1<span class=o>]</span>&gt;a<span class=o>[</span>i<span class=o>])</span>
+</span></span><span class=line><span class=cl>            <span class=o>{</span>
+</span></span><span class=line><span class=cl>                Swap<span class=o>(</span><span class=p>&amp;</span>a<span class=o>[</span>i-1<span class=o>]</span>,<span class=p>&amp;</span>a<span class=o>[</span>i<span class=o>])</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>                <span class=nv>exchange</span><span class=o>=</span>1<span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span><span class=o>(</span><span class=nv>exchange</span><span class=o>==</span>0<span class=o>)</span>
+</span></span><span class=line><span class=cl>            break<span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>空间复杂度：O<span class=o>(</span>1<span class=o>)</span>
+</span></span><span class=line><span class=cl>解析：这里其实总共开辟了三个空间，分别为end、exchange、i，
+</span></span><span class=line><span class=cl>既然是常数个变量，那么空间复杂度就是0（1），空间复杂度算的是申请的额外空间所以跟上面的int＊a和int n没有关系。
+</span></span></code></pre></td></tr></table></div></div><h4 id=o1和on的区别>O(1)和O(n)的区别<a hidden class=anchor aria-hidden=true href=#o1和on的区别>#</a></h4><ol><li>malloc一个数组
+int <em>a=(int</em>)malloc(sizeof(int)*numssize);//0(N)
+此情况的前提是numsSize必须是个未知的数字，如果是具体数字，那么空间复杂度依旧是0（1）</li><li>变长数组
+int a［numsSize］； ／／numsSize未知，0（N）</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>long long* Fibonacci<span class=o>(</span>size_t n<span class=o>)</span>
+</span></span><span class=line><span class=cl><span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span><span class=o>(</span><span class=nv>n</span><span class=o>==</span>0<span class=o>)</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> NULL<span class=p>;</span>
+</span></span><span class=line><span class=cl>    long long* <span class=nv>fibArray</span> <span class=o>=</span> <span class=o>(</span>long long*<span class=o>)</span>malloc<span class=o>((</span>n+1<span class=o>)</span> * sizeof<span class=o>(</span>long long<span class=o>))</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    fibArray<span class=o>[</span>0<span class=o>]</span> <span class=o>=</span> 0<span class=p>;</span>
+</span></span><span class=line><span class=cl>    fibArray<span class=o>[</span>1<span class=o>]</span> <span class=o>=</span> 1<span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span><span class=o>(</span>int <span class=nv>i</span><span class=o>=</span>2<span class=p>;</span>i&lt;<span class=o>=</span>n<span class=p>;</span>++i<span class=o>)</span>
+</span></span><span class=line><span class=cl>    <span class=o>{</span>
+</span></span><span class=line><span class=cl>        fibArray<span class=o>[</span>i<span class=o>]</span> <span class=o>=</span> fibArray<span class=o>[</span>i-1<span class=o>]</span> + fibArray<span class=o>[</span>i-2<span class=o>]</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> fibArray<span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>空间复杂度：O<span class=o>(</span>n<span class=o>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>这里看到了malloc开辟了n＋1个大小为1ong long类型的数组，看到这就不需要再过多计较后续创建了几个变量，因为空间复杂度是估算，所以直接就是O（N）
+</span></span></code></pre></td></tr></table></div></div><h4 id=阶乘递归fac的空间复杂度>阶乘递归Fac的空间复杂度<a hidden class=anchor aria-hidden=true href=#阶乘递归fac的空间复杂度>#</a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>long long Fac<span class=o>(</span>size_t N<span class=o>)</span>
+</span></span><span class=line><span class=cl><span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span><span class=o>(</span><span class=nv>N</span> <span class=o>==</span> 0<span class=o>)</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> 1<span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> Fac<span class=o>(</span>N-1<span class=o>)</span>*N<span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>空间复杂度：O<span class=o>(</span>N<span class=o>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>这里看到了递归调用了N次，每次都会开辟一个栈帧，所以空间复杂度就是O（N）
+</span></span></code></pre></td></tr></table></div></div><p><img loading=lazy src=20231120160143.png alt></p><h2 id=线性表>线性表<a hidden class=anchor aria-hidden=true href=#线性表>#</a></h2><p>线性表可以分为<strong>数组</strong>(顺序表)和<strong>链表</strong>两种存储结构。</p><p>前驱元素:
+若A元素在B元素的前面，则称A为B的前驱元素。</p><p>后继元素:
+若B元素在A元素的后面，则称B为A的后继元素。</p><p>特征:
+数据元素之间只有一对一的关系</p><p>头节点:
+第一个有效节点之前的节点
+第一个数据元素没有前驱</p><p>尾节点:
+最后一个有效节点之后的节点
+最后一个数据元素没有后继</p><h3 id=顺序表数组>顺序表(数组)<a hidden class=anchor aria-hidden=true href=#顺序表数组>#</a></h3><p>顺序表是以数组的形式存储</p><p>优点:
+- 查询速度快，时间复杂度为O(1)</p><p>缺点
+- 插入和删除速度慢，时间复杂度为O(n)
+- 表中元素个数需要提前定义</p><p><img loading=lazy src=20231120163428.png alt></p><p>特点: 逻辑地址相邻 物理地址也相邻</p><h4 id=顺序表基本操作功能实现>顺序表基本操作功能实现<a hidden class=anchor aria-hidden=true href=#顺序表基本操作功能实现>#</a></h4><h4 id=线性表的静态定义>线性表的静态定义<a hidden class=anchor aria-hidden=true href=#线性表的静态定义>#</a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl><span class=c1>#define MAXSIZE 100 // 定义线性表的最大长度</span>
+</span></span><span class=line><span class=cl>typedef int ElemType<span class=p>;</span> // 定义数据元素的类型
+</span></span><span class=line><span class=cl>typedef struct <span class=o>{</span>
+</span></span><span class=line><span class=cl>    ElemType data<span class=o>[</span>MAXSIZE<span class=o>]</span><span class=p>;</span> // 用静态的“数组”存放数据元素
+</span></span><span class=line><span class=cl>    int length<span class=p>;</span> // 线性表当前长度
+</span></span><span class=line><span class=cl><span class=o>}</span> SqList<span class=p>;</span> // 顺序表的类型定义
+</span></span></code></pre></td></tr></table></div></div><h4 id=线性表的静态初始化>线性表的静态初始化<a hidden class=anchor aria-hidden=true href=#线性表的静态初始化>#</a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>void InitList<span class=o>(</span>SqList <span class=p>&amp;</span>L<span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span> <span class=o>(</span>int <span class=nv>i</span> <span class=o>=</span> 0<span class=p>;</span> i &lt; MAXSIZE<span class=p>;</span> i++<span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        L.data<span class=o>[</span>i<span class=o>]</span> <span class=o>=</span> 0<span class=p>;</span> // 将所有数据元素的值设置为默认值
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>    L.length <span class=o>=</span> 0<span class=p>;</span> // 将线性表的当前长度设置为0
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=线性表的插入>线性表的插入<a hidden class=anchor aria-hidden=true href=#线性表的插入>#</a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>bool ListInsert<span class=o>(</span>SqList <span class=p>&amp;</span>L, int i, ElemType e<span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=o>(</span>i &lt; <span class=m>1</span> <span class=o>||</span> i &gt; L.length + 1<span class=o>)</span> <span class=o>{</span> // 判断i的范围是否有效
+</span></span><span class=line><span class=cl>        <span class=k>return</span> false<span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=o>(</span>L.length &gt;<span class=o>=</span> MAXSIZE<span class=o>)</span> <span class=o>{</span> // 当前存储空间已满，不能插入
+</span></span><span class=line><span class=cl>        <span class=k>return</span> false<span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span> <span class=o>(</span>int <span class=nv>j</span> <span class=o>=</span> L.length<span class=p>;</span> j &gt;<span class=o>=</span> i<span class=p>;</span> j--<span class=o>)</span> <span class=o>{</span> // 将第i个元素及之后的元素后移
+</span></span><span class=line><span class=cl>        L.data<span class=o>[</span>j<span class=o>]</span> <span class=o>=</span> L.data<span class=o>[</span>j - 1<span class=o>]</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>    L.data<span class=o>[</span>i - 1<span class=o>]</span> <span class=o>=</span> e<span class=p>;</span> // 在位置i处放入e
+</span></span><span class=line><span class=cl>    L.length++<span class=p>;</span> // 线性表长度增1
+</span></span><span class=line><span class=cl>    <span class=k>return</span> true<span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=线性表的删除>线性表的删除<a hidden class=anchor aria-hidden=true href=#线性表的删除>#</a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>bool ListDelete<span class=o>(</span>SqList <span class=p>&amp;</span>L, int i, ElemType <span class=p>&amp;</span>e<span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=o>(</span>i &lt; <span class=m>1</span> <span class=o>||</span> i &gt; L.length<span class=o>)</span> <span class=o>{</span> // 判断i的范围是否有效
+</span></span><span class=line><span class=cl>        <span class=k>return</span> false<span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>    <span class=nv>e</span> <span class=o>=</span> L.data<span class=o>[</span>i - 1<span class=o>]</span><span class=p>;</span> // 将被删除的元素赋值给e
+</span></span><span class=line><span class=cl>    <span class=k>for</span> <span class=o>(</span>int <span class=nv>j</span> <span class=o>=</span> i<span class=p>;</span> j &lt; L.length<span class=p>;</span> j++<span class=o>)</span> <span class=o>{</span> // 将第i个元素之后的元素前移
+</span></span><span class=line><span class=cl>        L.data<span class=o>[</span>j - 1<span class=o>]</span> <span class=o>=</span> L.data<span class=o>[</span>j<span class=o>]</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>    L.length--<span class=p>;</span> // 线性表长度减1
+</span></span><span class=line><span class=cl>    <span class=k>return</span> true<span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=线性表的按索引查找>线性表的按索引查找<a hidden class=anchor aria-hidden=true href=#线性表的按索引查找>#</a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>ElemType GetElem<span class=o>(</span>SqlList L,int i<span class=o>){</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> L.data<span class=o>[</span>i-1<span class=o>]</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=线性表的按值查找>线性表的按值查找<a hidden class=anchor aria-hidden=true href=#线性表的按值查找>#</a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>ElemType LocateElem<span class=o>(</span>SqlList L,ElemType e<span class=o>){</span> 
+</span></span><span class=line><span class=cl>    <span class=k>for</span><span class=o>(</span>int <span class=nv>i</span> <span class=o>=</span>0<span class=p>;</span>i &lt;L.length<span class=p>;</span>i ++<span class=o>)</span> 
+</span></span><span class=line><span class=cl>        <span class=k>if</span><span class=o>(</span>L.data<span class=o>[</span>i<span class=o>]==</span>e<span class=o>)</span>
+</span></span><span class=line><span class=cl>            <span class=k>return</span> i+1<span class=p>;</span> 
+</span></span><span class=line><span class=cl>    <span class=k>return</span> 0<span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=动态增长内存>动态增长内存<a hidden class=anchor aria-hidden=true href=#动态增长内存>#</a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>void IncreaseSize<span class=o>(</span>SqlList <span class=p>&amp;</span>L,int len<span class=o>){</span>
+</span></span><span class=line><span class=cl>    int *p <span class=o>=</span>L.data<span class=p>;</span>
+</span></span><span class=line><span class=cl>    L.data <span class=o>=(</span>int *<span class=o>)</span>malloc<span class=o>((</span>L.maxsize+len<span class=o>)</span>*sizeof<span class=o>(</span>int<span class=o>))</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span><span class=o>(</span>int <span class=nv>i</span> <span class=o>=</span>0<span class=p>;</span>i &lt;L.length<span class=p>;</span>i ++<span class=o>)</span>
+</span></span><span class=line><span class=cl>        L.data<span class=o>[</span>i<span class=o>]=</span>p<span class=o>[</span>i<span class=o>]</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    L.maxsize<span class=o>=</span>L.maxsize+len<span class=p>;</span>
+</span></span><span class=line><span class=cl>    free<span class=o>(</span>p<span class=o>)</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div></div><footer class=post-footer><nav class=paginav><a class=next href=https://blog.lotusssb.com/post/Web3-developer/Web3-%E5%BC%80%E5%8F%91/><span class=title>下一页 »</span><br><span>Web3?(未完待续</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2023 <a href=https://blog.lotusssb.com/>LOTUS BLOG</a></span>
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a></span><div class=busuanzi-footer><span id=busuanzi_container_site_pv>本站总访问量<span id=busuanzi_value_site_pv></span>次</span>
+<span id=busuanzi_container_site_uv>本站访客数<span id=busuanzi_value_site_uv></span>人次</span></div></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerText="复制";function s(){t.innerText="已复制！",setTimeout(()=>{t.innerText="复制"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>
