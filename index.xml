@@ -10,7 +10,16 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 20 Nov 2023 10:41:34 +0800</lastBuildDate><atom:link href="https://blog.lotusssb.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Nov 2023 14:50:47 +0800</lastBuildDate><atom:link href="https://blog.lotusssb.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>你好，xLog!</title>
+      <link>https://blog.lotusssb.com/post/xLog/</link>
+      <pubDate>Sun, 26 Nov 2023 14:50:47 +0800</pubDate>
+      
+      <guid>https://blog.lotusssb.com/post/xLog/</guid>
+      <description>这是我在xLog的第一篇文章，仰慕xlog的去中心化思想已久，也想学习下xlog的技术，于是在此建立我的第一个xlog博客 这篇博客也会同步到</description>
+    </item>
+    
     <item>
       <title>数据结构笔记</title>
       <link>https://blog.lotusssb.com/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
