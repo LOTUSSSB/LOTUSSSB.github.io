@@ -10,7 +10,25 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 26 Nov 2023 14:50:47 +0800</lastBuildDate><atom:link href="https://blog.lotusssb.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 Dec 2023 23:47:43 +0800</lastBuildDate><atom:link href="https://blog.lotusssb.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript笔记</title>
+      <link>https://blog.lotusssb.com/post/JS%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Tue, 26 Dec 2023 23:47:43 +0800</pubDate>
+      
+      <guid>https://blog.lotusssb.com/post/JS%E7%AC%94%E8%AE%B0/</guid>
+      <description>JS初体验 1.1 JS书写位置 内部JS：在HTML文件中，使用&amp;lt;script&amp;gt;标签将JS代码包裹起来，放在&amp;lt;body&amp;gt;标签</description>
+    </item>
+    
+    <item>
+      <title>2023年度总结</title>
+      <link>https://blog.lotusssb.com/post/2023%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Tue, 26 Dec 2023 21:07:00 +0800</pubDate>
+      
+      <guid>https://blog.lotusssb.com/post/2023%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>你好，xLog!</title>
       <link>https://blog.lotusssb.com/post/xLog/</link>
