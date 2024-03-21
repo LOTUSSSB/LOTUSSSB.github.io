@@ -26,7 +26,7 @@
       <pubDate>Fri, 01 Mar 2024 22:20:03 +0800</pubDate>
       
       <guid>https://blog.lotusssb.com/post/%E7%AE%97%E6%B3%95/</guid>
-      <description>汉诺塔问题 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 package main import &amp;#34;fmt&amp;#34; func main() { hanoi(3, &amp;#34;A&amp;#34;, &amp;#34;B&amp;#34;, &amp;#34;C&amp;#34;) } func hanoi(n int, a, b, c string) { if n == 1 { fmt.Println(a, &amp;#34;--&amp;gt;&amp;#34;, c) } else { hanoi(n-1, a, c, b) fmt.Println(a, &amp;#34;--&amp;gt;&amp;#34;, c) hanoi(n-1, b, a, c) } } 归并排序</description>
+      <description>分治法 汉诺塔问题 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 package main import &amp;#34;fmt&amp;#34; func main() { hanoi(3, &amp;#34;A&amp;#34;, &amp;#34;B&amp;#34;, &amp;#34;C&amp;#34;) } func hanoi(n int, a, b, c string) { if n == 1 { fmt.Println(a, &amp;#34;--&amp;gt;&amp;#34;, c) } else { hanoi(n-1, a, c, b) fmt.Println(a, &amp;#34;--&amp;gt;&amp;#34;, c) hanoi(n-1, b, a, c) } } 归</description>
     </item>
     
     <item>
