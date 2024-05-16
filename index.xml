@@ -10,7 +10,16 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 01 Mar 2024 22:20:03 +0800</lastBuildDate><atom:link href="https://blog.lotusssb.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 May 2024 23:12:28 +0800</lastBuildDate><atom:link href="https://blog.lotusssb.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>优化你的沉浸式翻译</title>
+      <link>https://blog.lotusssb.com/post/%E4%BC%98%E5%8C%96%E4%BD%A0%E7%9A%84%E6%B2%89%E6%B5%B8%E5%BC%8F%E7%BF%BB%E8%AF%91/</link>
+      <pubDate>Thu, 16 May 2024 23:12:28 +0800</pubDate>
+      
+      <guid>https://blog.lotusssb.com/post/%E4%BC%98%E5%8C%96%E4%BD%A0%E7%9A%84%E6%B2%89%E6%B5%B8%E5%BC%8F%E7%BF%BB%E8%AF%91/</guid>
+      <description>最近发现有个新的LLM号称自己强无敌，各种参数屌打其他国内ai，于是就去试了下，发现虽然效果没有吹嘘的那么好，但是API价格足够的便宜，索性</description>
+    </item>
+    
     <item>
       <title>算法设计与分析</title>
       <link>https://blog.lotusssb.com/post/%E7%AE%97%E6%B3%95/</link>
@@ -108,15 +117,6 @@
       
       <guid>https://blog.lotusssb.com/post/RSS%E6%8A%98%E8%85%BE%E5%B0%8F%E8%AE%B0/</guid>
       <description>在这个信息爆炸的时代，我越来越感觉到简单信息聚合对个人的重要性， 而RSS(Really Simple Syndication)就成为了我的目标 RSS折腾经</description>
-    </item>
-    
-    <item>
-      <title>AutoGPT体验</title>
-      <link>https://blog.lotusssb.com/post/AutoGPT%E4%BD%93%E9%AA%8C/</link>
-      <pubDate>Wed, 31 May 2023 15:45:39 +0800</pubDate>
-      
-      <guid>https://blog.lotusssb.com/post/AutoGPT%E4%BD%93%E9%AA%8C/</guid>
-      <description>AutoGPT体验 安装AutoGPT 我使用虚拟环境来创建这个项目，所以首先要激活虚拟环境，然后安装AutoGPT，安装完成后，就可以使用了。</description>
     </item>
     
     <item>
