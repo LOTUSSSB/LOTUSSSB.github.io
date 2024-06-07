@@ -10,7 +10,16 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 16 May 2024 23:12:28 +0800</lastBuildDate><atom:link href="https://blog.lotusssb.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 May 2024 16:37:58 +0800</lastBuildDate><atom:link href="https://blog.lotusssb.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MC脆骨症模组服开服记</title>
+      <link>https://blog.lotusssb.com/post/MC%E5%BC%80%E6%9C%8D%E8%AE%B0/</link>
+      <pubDate>Thu, 30 May 2024 16:37:58 +0800</pubDate>
+      
+      <guid>https://blog.lotusssb.com/post/MC%E5%BC%80%E6%9C%8D%E8%AE%B0/</guid>
+      <description>我这里购买的是雨云的7950x 4c10G的配置，安装了debian11系统 采用直接安装的方式安装 安装openjdk17 1 sudo apt install openjdk-17-jdk -y 安装scr</description>
+    </item>
+    
     <item>
       <title>优化你的沉浸式翻译</title>
       <link>https://blog.lotusssb.com/post/%E4%BC%98%E5%8C%96%E4%BD%A0%E7%9A%84%E6%B2%89%E6%B5%B8%E5%BC%8F%E7%BF%BB%E8%AF%91/</link>
