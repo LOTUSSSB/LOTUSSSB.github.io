@@ -1,0 +1,762 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>LOTUS BLOG</title><link>https://blog.lotussb.com/</link><description>Recent content on LOTUS BLOG</description><image><title>LOTUS BLOG</title><url>https://blog.lotussb.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url><link>https://blog.lotussb.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link></image><generator>Hugo -- 0.134.3</generator><language>en</language><lastBuildDate>Thu, 30 May 2024 16:37:58 +0800</lastBuildDate><atom:link href="https://blog.lotussb.com/index.xml" rel="self" type="application/rss+xml"/><item><title>MC脆骨症模组服开服小记</title><link>https://blog.lotussb.com/posts/minecraft-nofleshwiththincheast/</link><pubDate>Thu, 30 May 2024 16:37:58 +0800</pubDate><guid>https://blog.lotussb.com/posts/minecraft-nofleshwiththincheast/</guid><description>&lt;p>我这里购买的是雨云的7950x 4c10G的配置，安装了debian11系统&lt;/p>
+&lt;p>采用直接安装的方式安装&lt;/p>
+&lt;p>安装openjdk17&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="line">&lt;span class="cl">sudo apt install openjdk-17-jdk -y
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>安装screen以便不用一直挂着服务端&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="line">&lt;span class="cl">➜ / java -version
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">openjdk version &lt;span class="s2">&amp;#34;1.8.0_352&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">OpenJDK Runtime Environment &lt;span class="o">(&lt;/span>Alibaba Dragonwell Extended Edition 8.13.14&lt;span class="o">)&lt;/span> &lt;span class="o">(&lt;/span>build 1.8.0_352-b01&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">OpenJDK 64-Bit Server VM &lt;span class="o">(&lt;/span>Alibaba Dragonwell Extended Edition 8.13.14&lt;span class="o">)&lt;/span> &lt;span class="o">(&lt;/span>build 25.352-b01, mixed mode&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>java -jar forge-1.19.2-43.3.8-installer.jar nogui &amp;ndash;installServer&lt;/p>
+&lt;p>➜ mc ls
+config defaultconfigs forge-1.19.2-43.3.8-installer.jar installer.log kubejs libraries mods run.bat run.sh user_jvm_args_backup.txt user_jvm_args.txt
+➜ mc&lt;/p>
+&lt;p>执行java -jar文件安装forge-1.19.2-43.3.8-installer.jar 即可
+&lt;img loading="lazy" src="20240530181735.png" alt="" />
+&lt;/p>
+&lt;p>随后启动run.sh文件，初次运行会生成eula.txt并且如果没有同意协议会无法启动
+&lt;img loading="lazy" src="20240530182233.png" alt="" />
+&lt;/p>
+&lt;p>我们对eula文件进行修改，改为true后即可运行
+&lt;img loading="lazy" src="20240530182458.png" alt="" />
+&lt;/p></description></item><item><title>优化你的沉浸式翻译</title><link>https://blog.lotussb.com/posts/improve_your_translation/</link><pubDate>Thu, 16 May 2024 23:12:28 +0800</pubDate><guid>https://blog.lotussb.com/posts/improve_your_translation/</guid><description>&lt;p>最近发现有个新的LLM号称自己强无敌，各种参数屌打其他国内ai，于是就去试了下，发现虽然效果没有吹嘘的那么好，但是API价格足够的便宜，索性决定用来做沉浸式翻译的API调用&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>首先，你需要注册一个&lt;a href="https://platform.deepseek.com/">deepseek&lt;/a>平台的账户&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击创建API KEY后，复制好这个API KEY
+&lt;img loading="lazy" src="20240516232359.png" alt="" />
+&lt;/p>
+&lt;/li>
+&lt;li>&lt;/li>
+&lt;/ol>
+&lt;p>回到沉浸式翻译&lt;/p>
+&lt;p>&lt;img loading="lazy" src="20240516231941.png" alt="" />
+在设置找到翻译服务，点击OpenAI&lt;/p>
+&lt;p>点击自定义API&lt;/p>
+&lt;p>API KEY就填写你刚刚复制好的API KEY&lt;/p>
+&lt;p>在模型这里，找到设置更多模型&lt;/p>
+&lt;p>&lt;img loading="lazy" src="20240516232542.png" alt="" />
+&lt;/p>
+&lt;p>输入deepseek-chat&lt;/p>
+&lt;p>&lt;img loading="lazy" src="20240516232613.png" alt="" />
+&lt;/p>
+&lt;p>点击下方的展开更多选项&lt;/p>
+&lt;p>&lt;img loading="lazy" src="20240516232727.png" alt="" />
+&lt;/p>
+&lt;p>找到自定义API地址，输入 &lt;a href="https://api.deepseek.com">https://api.deepseek.com&lt;/a> 就大功告成啦！&lt;/p>
+&lt;p>&lt;img loading="lazy" src="20240516232754.png" alt="" />
+&lt;/p>
+&lt;ol start="4">
+&lt;li>&lt;strong>现在，享受便宜且优秀的翻译服务吧！&lt;/strong>&lt;/li>
+&lt;/ol></description></item><item><title>记录一次NGINX的错误</title><link>https://blog.lotussb.com/posts/nginx_error/</link><pubDate>Sun, 24 Sep 2023 00:08:57 +0800</pubDate><guid>https://blog.lotussb.com/posts/nginx_error/</guid><description>&lt;h2 id="问题复现">问题复现&lt;/h2>
+&lt;p>&lt;img loading="lazy" src="20230924002146.png" alt="" />
+&lt;/p>
+&lt;p>在网络中，发现css和js都正常加载了，但是在实际加载的网页中，只有front正常加载，css和js&lt;/p>
+&lt;p>&lt;img loading="lazy" src="20230924004023.png" alt="" />
+&lt;/p>
+&lt;p>大概就是这种效果（悲&lt;/p>
+&lt;p>我的nginx配置文件如下：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-nginx" data-lang="nginx">&lt;span class="line">&lt;span class="cl">&lt;span class="k">```bash&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">user&lt;/span> &lt;span class="s">nginx&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">worker_processes&lt;/span> &lt;span class="s">auto&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">error_log&lt;/span> &lt;span class="s">/folder/log/error.log&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">pid&lt;/span> &lt;span class="s">/var/run/nginx.pid&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">events&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">worker_connections&lt;/span> &lt;span class="mi">1024&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">http{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">server&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">listen&lt;/span> &lt;span class="mi">80&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">server_name&lt;/span> &lt;span class="s">test.example,com&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">location&lt;/span> &lt;span class="s">/&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">root&lt;/span> &lt;span class="s">/folder/nginx/html/dist&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">index&lt;/span> &lt;span class="s">index.html&lt;/span> &lt;span class="s">index.htm&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="寻求方法">寻求方法&lt;/h2>
+&lt;h3 id="权限问题">权限问题?&lt;/h3>
+&lt;p>一开始以为是静态文件static的权限问题，就在static文件夹下执行了&lt;code>chmod -R 775 *&lt;/code>&lt;/p>
+&lt;h3 id="正则表达式映射">正则表达式映射?&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-nginx" data-lang="nginx">&lt;span class="line">&lt;span class="cl">&lt;span class="k">location&lt;/span> &lt;span class="p">~&lt;/span> &lt;span class="sr">^/(?&amp;lt;dir&amp;gt;[^/]+)/(?&amp;lt;file&amp;gt;[^/]+)$&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">gzip&lt;/span> &lt;span class="no">on&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">alias&lt;/span> &lt;span class="s">/folder/nginx/html/dist/static/&lt;/span>&lt;span class="nv">$dir/$file&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>SO上的一个回答，据说在加入这个后正则表达式就能匹配到静态文件&lt;/p></description></item><item><title>使用Linux命名空间、cgroups和chroot构建您自己的Docker：实践指南</title><link>https://blog.lotussb.com/posts/build_your_own_docker/</link><pubDate>Sun, 02 Jul 2023 22:18:02 +0800</pubDate><guid>https://blog.lotussb.com/posts/build_your_own_docker/</guid><description>&lt;p>转载自：&lt;a href="https://akashrajpurohit.com/blog/build-your-own-docker-with-linux-namespaces-cgroups-and-chroot-handson-guide/">https://akashrajpurohit.com/blog/build-your-own-docker-with-linux-namespaces-cgroups-and-chroot-handson-guide/&lt;/a>&lt;/p>
+&lt;h2 id="简介">简介&lt;/h2>
+&lt;p>容器化已经改变了软件开发和部署的世界。Docker是一个领先的容器化平台，利用Linux命名空间、cgroups和chroot提供强大的隔离、资源管理和安全性。&lt;/p>
+&lt;p>在这个实践指南中，我们将跳过理论部分（如果您想更深入了解这些主题，请查阅上面提供的链接），直接进入实际实现的步骤。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">在我们深入使用命名空间、cgroups和chroot构建类似Docker的环境之前，有必要明确一点，本实践指南并不旨在替代Docker及其功能。
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Docker拥有分层镜像、网络、容器编排和丰富的工具等功能，使其成为一种功能强大且多用途的应用部署解决方案。
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">本指南的目的是通过从零开始构建一个基本的容器环境，提供对构成Docker核心的基础技术的教育性探索。通过这样的实践，我们旨在深入理解这些底层技术如何协同工作，实现容器化。
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="让我们开始构建docker">让我们开始构建Docker&lt;/h2>
+&lt;h3 id="step-1-设置命名空间">Step 1: 设置命名空间&lt;/h3>
+&lt;p>为了创建一个隔离的环境，我们首先设置一个新的命名空间。我们使用unshare命令，指定不同的命名空间（&amp;ndash;uts，&amp;ndash;pid，&amp;ndash;net，&amp;ndash;mount和&amp;ndash;ipc），为我们的容器提供独立的系统标识和资源实例。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">unshare --uts --pid --net --mount --ipc --fork
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="step-2-配置cgroups">Step 2: 配置cgroups&lt;/h3>
+&lt;p>Cgroups（控制组）帮助管理资源分配，并控制我们容器化进程对系统资源的使用。&lt;/p>
+&lt;p>我们为容器创建一个新的cgroup，并分配CPU配额限制以限制其资源使用量。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">mkdir /sys/fs/cgroup/cpu/container1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> &lt;span class="m">100000&lt;/span> &amp;gt; /sys/fs/cgroup/cpu/container1/cpu.cfs_quota_us
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> &lt;span class="m">0&lt;/span> &amp;gt; /sys/fs/cgroup/cpu/container1/tasks
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> &lt;span class="nv">$$&lt;/span> &amp;gt; /sys/fs/cgroup/cpu/container1/tasks
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>在第三行，我们将值0写入/sys/fs/cgroup/cpu/container1/目录下的tasks文件。tasks文件用于控制哪些进程分配给特定的cgroup。&lt;/p>
+&lt;p>通过向该文件写入0，我们将任何先前分配给cgroup的进程移出。这确保了最初没有进程分配给container1 cgroup。&lt;/p>
+&lt;p>在第四行，我们将$$的值写入/sys/fs/cgroup/cpu/container1/目录下的tasks文件。&lt;/p>
+&lt;p>这确保由Shell或脚本生成的任何后续子进程也将成为container1cgroup的一部分，并且它们的资源使用将受到指定的CPU配额限制的限制。&lt;/p>
+&lt;h3 id="step-3-构建根文件系统">Step 3: 构建根文件系统&lt;/h3>
+&lt;p>为了创建我们的容器文件系统，我们使用debootstrap在一个名为&amp;quot;ubuntu-rootfs&amp;quot;的目录中设置一个最小化的Ubuntu环境。这将作为我们容器的根文件系统。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">debootstrap focal ./ubuntu-rootfs http://archive.ubuntu.com/ubuntu/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="step-4-挂载和进入容器的chroot环境">Step 4: 挂载和进入容器的chroot环境&lt;/h3>
+&lt;p>我们在容器的根文件系统中挂载了必要的文件系统，如/proc、/sys和/dev。然后，我们使用chroot命令将根目录更改为我们容器的文件系统。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">mount -t proc none ./ubuntu-rootfs/proc
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mount -t sysfs none ./ubuntu-rootfs/sys
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mount -o &lt;span class="nb">bind&lt;/span> /dev ./ubuntu-rootfs/dev
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">chroot ./ubuntu-rootfs /bin/bash
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>第一个命令将proc文件系统挂载到./ubuntu-rootfs/proc目录中。proc文件系统以虚拟文件的形式提供有关进程和系统资源的信息。&lt;/p></description></item><item><title>AutoGPT体验</title><link>https://blog.lotussb.com/posts/autogpt_experience/</link><pubDate>Wed, 31 May 2023 15:45:39 +0800</pubDate><guid>https://blog.lotussb.com/posts/autogpt_experience/</guid><description>&lt;h1 id="autogpt体验">AutoGPT体验&lt;/h1>
+&lt;h2 id="安装autogpt">安装AutoGPT&lt;/h2>
+&lt;p>我使用虚拟环境来创建这个项目，所以首先要激活虚拟环境，然后安装AutoGPT，安装完成后，就可以使用了。&lt;/p>
+&lt;p>在cmd输入下面内容&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">pip install virtualenv &lt;span class="c1">#安装虚拟环境&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">virtualenv autogpt &lt;span class="c1">#创建虚拟环境&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> autogpt &lt;span class="c1">#进入虚拟环境&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">.&lt;span class="se">\S&lt;/span>cripts&lt;span class="se">\a&lt;/span>ctivate &lt;span class="c1">#激活虚拟环境&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>常用命令&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">deactivate &lt;span class="c1">#退出虚拟环境&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">activate &lt;span class="c1">#进入虚拟环境&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>删除虚拟环境&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">rmdir autogpt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>官方推荐python&lt;code>3.10&lt;/code>以上版本，我使用的是python&lt;code>3.11.3&lt;/code>版本，&lt;/p>
+&lt;p>在这里我使用的是命令&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">virtualenv autogpt --python&lt;span class="o">=&lt;/span>python3.11.3
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#创建虚拟环境，指定python版本为3.11.3&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>需要注意，如果你的电脑上没有&lt;code>3.11.3&lt;/code>版本的python，那么你需要先安装&lt;code>3.11.3&lt;/code>版本的python，然后再创建虚拟环境。&lt;/p>
+&lt;p>接下来，安装AutoGPT
+在cmd输入下面内容&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git clone -b stable --single-branch https://github.com/Significant-Gravitas/Auto-GPT.git
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;img loading="lazy" src="20230531193444.png" alt="" />
+&lt;/p>
+&lt;p>安装依赖&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">pip install -r requirements.txt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>接下来我们要对AutoGPT进行一些配置，在文件内有.env.example文件，我们需要将其复制一份，并将其命名为.env
+在.env文件内找到&lt;code>OPENAI_API_KEY&lt;/code>，将其改为你的OpenAI API Key，如果没有的话，可以在&lt;a href="https://beta.openai.com/">OpenAI官网&lt;/a>申请一个，申请成功后，将其填入即可。&lt;/p>
+&lt;p>&lt;img loading="lazy" src="20230531194109.png" alt="" />
+&lt;/p>
+&lt;h2 id="运行autogpt">运行AutoGPT&lt;/h2>
+&lt;p>在cmd输入下面内容&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">python -m autogpt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>就可以启动Autogpt了&lt;/p></description></item><item><title>Flask学习</title><link>https://blog.lotussb.com/posts/flask_learning/</link><pubDate>Sat, 06 May 2023 22:00:08 +0800</pubDate><guid>https://blog.lotussb.com/posts/flask_learning/</guid><description>&lt;h1 id="flask学习">Flask学习&lt;/h1>
+&lt;h2 id="11-配置环境与访问">1.1 配置环境与访问&lt;/h2>
+&lt;p>&lt;img loading="lazy" src="20230506220727.png" alt="" />
+&lt;/p>
+&lt;ol>
+&lt;li>配置环境&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">cdvirtualenv 进入虚拟环境
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">rmvirtualenv 删除虚拟环境
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">lsvittualenv 列出虚拟环境
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="2">
+&lt;li>自己安装：
+进入终端中进入虚拟环境&amp;mdash;&amp;ndash;&amp;gt;&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">pip list
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pip install pymysql
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pip install &lt;span class="nv">flask&lt;/span>&lt;span class="o">==&lt;/span>1.0&lt;span class="o">(&lt;/span>卸载原来的版本，安装指明的版本&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="3">
+&lt;li>项目结构介绍：&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">--项目名：
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">|&lt;/span>---static &lt;span class="o">(&lt;/span>静态&lt;span class="o">)&lt;/span>js css
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">|&lt;/span>---templates&lt;span class="o">(&lt;/span>模板&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">|&lt;/span>--app,py（运行引启动）
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>新建Flask项目&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">flask&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">Flask&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">app&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Flask&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="vm">__name__&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nd">@app.route&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;/&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">hello_world&lt;/span>&lt;span class="p">():&lt;/span> &lt;span class="c1"># put application&amp;#39;s code here&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="s1">&amp;#39;哈哈哈&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">if&lt;/span> &lt;span class="vm">__name__&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s1">&amp;#39;__main__&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">app&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">run&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>路由 URL &lt;a href="http://127.0.0.1:5000">http://127.0.0.1:5000&lt;/a>&lt;/strong>&lt;/p></description></item><item><title>Web3学习</title><link>https://blog.lotussb.com/posts/web3_learing/</link><pubDate>Thu, 30 Mar 2023 00:00:36 +0800</pubDate><guid>https://blog.lotussb.com/posts/web3_learing/</guid><description>&lt;h1 id="区块链技术与应用">区块链技术与应用&lt;/h1>
+&lt;h2 id="引言">引言&lt;/h2>
+&lt;p>区块链不止是比特币，不要被比特币限制想象
+1.1
+&lt;img loading="lazy" src="20230330000942.png" alt="" />
+&lt;/p>
+&lt;p>&lt;img loading="lazy" src="20230330001101.png" alt="" />
+&lt;/p>
+&lt;p>&lt;img loading="lazy" src="20230330001115.png" alt="" />
+&lt;/p>
+&lt;p>&lt;img loading="lazy" src="20230330001320.png" alt="" />
+&lt;/p>
+&lt;h2 id="btc密码学原理">BTC密码学原理&lt;/h2>
+&lt;p>比特币被称为加密货币，但是加密货币是不加密的，区块链所有内容都是公开的，例如转账金额，账户地址&lt;/p>
+&lt;p>使用到两种哈希函数&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>cryptographic hash function&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>collison resistance (哈希碰撞)&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>哈希碰撞 ：x ! = y, H (x) = H (y)&lt;/p>
+&lt;p>一般来说，哈希碰撞是不可避免的，因为输入空间远大于输出空间（没有什么高效的方法使得哈希人为碰撞&lt;/p>
+&lt;p>&lt;strong>collison resistance的性质：找不到H(m&amp;rsquo;) 与之相同&lt;/strong>&lt;/p>
+&lt;p>H(m) 与 digest&lt;/p>
+&lt;p>&lt;strong>如果有人修改H(m),哈希值就会被修改&lt;/strong>&lt;/p>
+&lt;p>没办法篡改内容而不被检测 (类似刷机时的检验md5值)(md5就是哈希的一种，不够已经不再安全了)&lt;/p>
+&lt;p>x 可以推出 H(x)，但是反之不行&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>hiding&lt;/strong>：hash函数的计算过程是单向的，是不可逆的。给定一个输入X，可以计算其hash值 H(X)，但是通过H(X)，很难知道其输出为X。当然蛮力求解也是一个办法。hiding性质的前提是：（1）输入空间较大；（2）输入的分布比较分散。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>digital commitment（digital equivalent of a sealed envelope）&lt;/strong>：通过collision resistance和hiding的性质，就可以得到digital commitment这个性质。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>举例：想要预测股市，但是又不能影响，只能把结果放在信封里面。&lt;/p>
+&lt;p>预测结果不能提前公开，就需要用到sealed envelope(密封信封)，把 x 算出的哈希值公布出去，因为有哈希hiding的性质，又有collison resistance的性质，就能做到预测股市但是又不影响&lt;/p>
+&lt;p>如果输入不满足hiding，常用把输如拼接随机数再哈希 &lt;strong>H( x || nonce)&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>puzzle friendly&lt;/strong>: 要想使得计算得到的hash值在某一个范围之内，则只能够一个一个的输入去尝试，很难直接找到某个值使得其hash值在某一个范围内。挖矿 也是就是这个意思。挖矿就是把区块中的一些信息+随机数进行hash，使得其结果前K位数为0，才能够满足要求。挖矿无捷径，只能够去大量的试。所以也就产生了 工作量证明（POW）。&lt;/li>
+&lt;/ul>
+&lt;h3 id="工作量证明pow">工作量证明(POW)&lt;/h3>
+&lt;p>就是做了大量的尝试之后，才得到符合要求的结果，这个过程叫做工作量证明。proof of work&lt;/p></description></item><item><title>Hugo+Github Pages搭建</title><link>https://blog.lotussb.com/posts/hugo_deploy/</link><pubDate>Fri, 17 Mar 2023 12:30:19 +0800</pubDate><guid>https://blog.lotussb.com/posts/hugo_deploy/</guid><description>&lt;p>在跟随网上的教程搭建中，我发现了许多的问题，所以决定自己写一篇搭建教程&lt;/p>
+&lt;p>我会把自己遇到的问题详细的列出来，并给予解决方案&lt;/p>
+&lt;h2 id="第一步安装hugo">第一步，安装Hugo&lt;/h2>
+&lt;p>1.浏览官方的&lt;a href="https://gohugo.io/installation/">使用指南&lt;/a>&lt;/p>
+&lt;p>本次部署使用的是Windows系统&lt;/p>
+&lt;p>如果你对操作有些困惑，这份&lt;a href="https://gohugo.io/installation/">指南&lt;/a>有对其他系统如何安装Hugo的详细说明&lt;/p>
+&lt;p>在这里我选择了使用对新手比较友好的方式，从&lt;a href="https://github.com/gohugoio/hugo">GitHub主页&lt;/a>下载zip包下载后添加到环境变量&lt;/p>
+&lt;p>找到并点击&lt;strong>Releases&lt;/strong>选择适合自己的安装包
+&lt;img loading="lazy" src="20230317144933.png" alt="" />
+&lt;/p>
+&lt;p>Windows系统选择带有&lt;strong>Windows&lt;/strong>字样的安装包
+&lt;img loading="lazy" src="20230317145158.png" alt="带有Windows字样" />
+&lt;/p>
+&lt;p>下载后解压到适合的文件夹,找到&lt;strong>bin文件&lt;/strong>，&lt;strong>复制路径到环境变量中&lt;/strong>
+&lt;img src="20230317145641.png" style="zoom: 50%;" />&lt;/p>
+&lt;p>至此，Hugo就安装完毕了！&lt;/p>
+&lt;h2 id="第二步新建一个hugo网站">第二步，新建一个Hugo网站&lt;/h2>
+&lt;p>1.进入你想存放Hugo网站文件的文件夹，&lt;strong>在文件夹下&lt;/strong>使用终端(cmd)执行以下命令新建一个Hugo网站&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">hugo new site myblog &lt;span class="c1"># &amp;#34;myblog&amp;#34; 是我的网站文件夹名&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>2.选择Hugo主题并克隆至本地目录&lt;/p>
+&lt;p>打开 &lt;a href="https://themes.gohugo.io/">Hugo Themes&lt;/a> 页面，选择一个你喜欢的主题&lt;/p>
+&lt;p>我选择的是&lt;a href="https://github.com/kahnwong/hugo-PaperModX">PaperModX&lt;/a>主题&lt;/p>
+&lt;p>&lt;strong>进入themes文件夹&lt;/strong>&lt;/p>
+&lt;p>将所选主题克隆到本地(themes文件夹下)
+&lt;img src="20230317151600.png" style="zoom: 67%;" />&lt;/p>
+&lt;p>点击复制按钮，执行&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git clone 复制得到的链接
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>clone成功后，还需要修改文件夹名为你的主题名才可正常运转&lt;/strong>，在这里我修改文件名为PaperModX
+&lt;img loading="lazy" src="20230317152600.png" alt="" />
+&lt;/p>
+&lt;p>3.编辑配置文件&lt;/p>
+&lt;p>编辑文件是Hugo自定义的灵魂所在，值得各位研究,官方提供了&lt;a href="https://adityatelange.github.io/hugo-PaperMod/">英文文档&lt;/a>,更有第三方的&lt;a href="https://note.ftls.xyz/papermod/">中文文档&lt;/a>,也可以仿照他人的&lt;a href="https://adityatelange.github.io/hugo-PaperMod/">范例&lt;/a>进行修改，&lt;/p>
+&lt;p>4.新建一篇文章&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>进入网站文件夹的根目录&lt;/p>
+&lt;p>使用以下命令新建一篇文章&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">hugo new post/my-first-post.md &lt;span class="c1"># &amp;#34;my-first-post.md&amp;#34;是新建文章的文件名&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>这里我采用另一种方法，来自这位&lt;a href="https://wrong.wang/blog/20190301-%E6%9C%AC%E7%AB%99%E5%BC%95%E7%94%A8%E5%9B%BE%E7%89%87%E7%9A%84%E9%A1%BA%E6%BB%91%E6%B5%81%E7%A8%8B/">大佬的博客&lt;/a>&lt;/p>
+&lt;p>思路是&lt;strong>每一篇文章都创建一个新的文件夹&lt;/strong>，将所需要的&lt;strong>图片放在文件夹下&lt;/strong>&lt;/p>
+&lt;p>而不用使用Hugo传统的把图片放在其他文件夹，方便了引用&lt;/p>
+&lt;p>&lt;strong>注意：文件夹下的文章需命名为index.md，否则无法识别&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>5.编辑新建的文章，添加内容并保存&lt;/p>
+&lt;p>6.本地预览网页效果&lt;/p>
+&lt;p>启动Hugo server&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">hugo server -D
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;img src="20230317155100.png" style="zoom: 67%;" />
+&lt;p>使用浏览器打开 http://localhost:1313 预览&lt;/p></description></item><item><title>Linux学习🐧</title><link>https://blog.lotussb.com/posts/linux_learning/</link><pubDate>Wed, 15 Mar 2023 19:58:07 +0800</pubDate><guid>https://blog.lotussb.com/posts/linux_learning/</guid><description>&lt;h1 id="linux课程">Linux课程&lt;/h1>
+&lt;h2 id="11初识linux">1.1初识Linux&lt;/h2>
+&lt;p>具有商业能力的并且免费的Linux是&lt;strong>Centos&lt;/strong>&lt;/p>
+&lt;p>各种认证：&lt;/p>
+&lt;p>RHCE红帽认证&lt;/p>
+&lt;img src="image-20230209144046895.png" alt="image-20230209144046895" style="zoom:33%;" />
+&lt;p>Linux系统部署&amp;ndash;获取linux常用发行版的方法&lt;/p>
+&lt;p>为了方便传输，压制成ISO文件&lt;/p>
+&lt;h2 id="12文件管理">&lt;strong>1.2文件管理&lt;/strong>&lt;/h2>
+&lt;p>Linux目录结构视图&lt;/p>
+&lt;p>&lt;img loading="lazy" src="image-20230209152011899.png" alt="image-20230209152011899" />
+&lt;/p>
+&lt;p>系统目录（文件夹）&lt;/p>
+&lt;p>&lt;strong>Bin:&lt;strong>binary&lt;/strong>二进制&lt;/strong>&lt;/p>
+&lt;p>**Boot：**启动相关的文件&lt;/p>
+&lt;p>**Dev：**device设备&lt;/p>
+&lt;p>**Etc：**配置文件（控制台文件&lt;/p>
+&lt;p>**Home：**装用户自己的文件&lt;/p>
+&lt;p>**Run：**运行目录&lt;/p>
+&lt;p>**Sbin:**temp&lt;/p>
+&lt;p>**Usr:**应用程序&lt;/p>
+&lt;p>Linux 命令语法&lt;/p>
+&lt;ol>
+&lt;li>cd&lt;/li>
+&lt;li>ls&lt;/li>
+&lt;li>pwd&lt;/li>
+&lt;li>&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>命令 选项 参数&lt;/strong>&lt;/p>
+&lt;p>ls -l /(默认显示根目录的内容)&lt;/p>
+&lt;h3 id="文件管理命令">文件管理命令&lt;/h3>
+&lt;p>ls -l&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>改变命令&lt;/p>
+&lt;hr>
+&lt;p>cd 绝对路径或相对路径&lt;/p>
+&lt;p>cd 绝对路径 cd /home/alice&lt;/p>
+&lt;p>cd 相对路径 cd . ..&lt;/p>
+&lt;hr>
+&lt;/li>
+&lt;li>
+&lt;p>.创建文件&lt;/p>
+&lt;hr>
+&lt;p>ls 列出目录当中的内容&lt;/p>
+&lt;p>举例说明&lt;/p>
+&lt;p>ls /&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;span class="lnt">36
+&lt;/span>&lt;span class="lnt">37
+&lt;/span>&lt;span class="lnt">38
+&lt;/span>&lt;span class="lnt">39
+&lt;/span>&lt;span class="lnt">40
+&lt;/span>&lt;span class="lnt">41
+&lt;/span>&lt;span class="lnt">42
+&lt;/span>&lt;span class="lnt">43
+&lt;/span>&lt;span class="lnt">44
+&lt;/span>&lt;span class="lnt">45
+&lt;/span>&lt;span class="lnt">46
+&lt;/span>&lt;span class="lnt">47
+&lt;/span>&lt;span class="lnt">48
+&lt;/span>&lt;span class="lnt">49
+&lt;/span>&lt;span class="lnt">50
+&lt;/span>&lt;span class="lnt">51
+&lt;/span>&lt;span class="lnt">52
+&lt;/span>&lt;span class="lnt">53
+&lt;/span>&lt;span class="lnt">54
+&lt;/span>&lt;span class="lnt">55
+&lt;/span>&lt;span class="lnt">56
+&lt;/span>&lt;span class="lnt">57
+&lt;/span>&lt;span class="lnt">58
+&lt;/span>&lt;span class="lnt">59
+&lt;/span>&lt;span class="lnt">60
+&lt;/span>&lt;span class="lnt">61
+&lt;/span>&lt;span class="lnt">62
+&lt;/span>&lt;span class="lnt">63
+&lt;/span>&lt;span class="lnt">64
+&lt;/span>&lt;span class="lnt">65
+&lt;/span>&lt;span class="lnt">66
+&lt;/span>&lt;span class="lnt">67
+&lt;/span>&lt;span class="lnt">68
+&lt;/span>&lt;span class="lnt">69
+&lt;/span>&lt;span class="lnt">70
+&lt;/span>&lt;span class="lnt">71
+&lt;/span>&lt;span class="lnt">72
+&lt;/span>&lt;span class="lnt">73
+&lt;/span>&lt;span class="lnt">74
+&lt;/span>&lt;span class="lnt">75
+&lt;/span>&lt;span class="lnt">76
+&lt;/span>&lt;span class="lnt">77
+&lt;/span>&lt;span class="lnt">78
+&lt;/span>&lt;span class="lnt">79
+&lt;/span>&lt;span class="lnt">80
+&lt;/span>&lt;span class="lnt">81
+&lt;/span>&lt;span class="lnt">82
+&lt;/span>&lt;span class="lnt">83
+&lt;/span>&lt;span class="lnt">84
+&lt;/span>&lt;span class="lnt">85
+&lt;/span>&lt;span class="lnt">86
+&lt;/span>&lt;span class="lnt">87
+&lt;/span>&lt;span class="lnt">88
+&lt;/span>&lt;span class="lnt">89
+&lt;/span>&lt;span class="lnt">90
+&lt;/span>&lt;span class="lnt">91
+&lt;/span>&lt;span class="lnt">92
+&lt;/span>&lt;span class="lnt">93
+&lt;/span>&lt;span class="lnt">94
+&lt;/span>&lt;span class="lnt">95
+&lt;/span>&lt;span class="lnt">96
+&lt;/span>&lt;span class="lnt">97
+&lt;/span>&lt;span class="lnt">98
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">-a, --all 不隐藏任何以. 开始的项目
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">-A, --almost-all 列出除. 及.. 以外的任何项目
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --author 与-l 同时使用时列出每个文件的作者
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">-b, --escape 以八进制溢出序列表示不可打印的字符
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --block-size&lt;span class="o">=&lt;/span>SIZE scale sizes by SIZE before printing them&lt;span class="p">;&lt;/span> e.g.,
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;--block-size=M&amp;#39;&lt;/span> prints sizes in units of
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> 1,048,576 bytes&lt;span class="p">;&lt;/span> see SIZE format below
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">-B, --ignore-backups &lt;span class="k">do&lt;/span> not list implied entries ending with ~
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">-c with -lt: sort by, and show, ctime &lt;span class="o">(&lt;/span>&lt;span class="nb">time&lt;/span> of last
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> modification of file status information&lt;span class="o">)&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> with -l: show ctime and sort by name&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> otherwise: sort by ctime, newest first
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">-C list entries by columns
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --color&lt;span class="o">[=&lt;/span>WHEN&lt;span class="o">]&lt;/span> colorize the output&lt;span class="p">;&lt;/span> WHEN can be &lt;span class="s1">&amp;#39;never&amp;#39;&lt;/span>, &lt;span class="s1">&amp;#39;auto&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> or &lt;span class="s1">&amp;#39;always&amp;#39;&lt;/span> &lt;span class="o">(&lt;/span>the default&lt;span class="o">)&lt;/span>&lt;span class="p">;&lt;/span> more info below
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">-d, --directory list directories themselves, not their contents
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">-D, --dired generate output designed &lt;span class="k">for&lt;/span> Emacs&lt;span class="s1">&amp;#39; dired mode
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">-f do not sort, enable -aU, disable -ls --color
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">-F, --classify append indicator (one of */=&amp;gt;@|) to entries
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> --file-type likewise, except do not append &amp;#39;&lt;/span>*&lt;span class="s1">&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> --format=WORD across -x, commas -m, horizontal -x, long -l,
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> single-column -1, verbose -l, vertical -C
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> --full-time like -l --time-style=full-iso
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">-g 类似-l，但不列出所有者
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> --group-directories-first
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> group directories before files;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> can be augmented with a --sort option, but any
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> use of --sort=none (-U) disables grouping
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">-G, --no-group 以一个长列表的形式，不输出组名
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">-h, --human-readable 与-l 一起，以易于阅读的格式输出文件大小
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> (例如 1K 234M 2G)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> --si 同上面类似，但是使用1000 为基底而非1024
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">-H, --dereference-command-line
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> follow symbolic links listed on the command line
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> --dereference-command-line-symlink-to-dir
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> follow each command line symbolic link
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> that points to a directory
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> --hide=PATTERN do not list implied entries matching shell PATTERN
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> (overridden by -a or -A)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> --indicator-style=WORD append indicator with style WORD to entry names:
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> none (default), slash (-p),
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> file-type (--file-type), classify (-F)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">-i, --inode print the index number of each file
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">-I, --ignore=PATTERN do not list implied entries matching shell PATTERN
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">-k, --kibibytes default to 1024-byte blocks for disk usage
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">-l 使用较长格式列出信息
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">-L, --dereference 当显示符号链接的文件信息时，显示符号链接所指示
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> 的对象而并非符号链接本身的信息
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">-m 所有项目以逗号分隔，并填满整行行宽
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">-n, --numeric-uid-gid 类似 -l，但列出UID 及GID 号
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">-N, --literal 输出未经处理的项目名称 (如不特别处理控制字符)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">-o 类似 -l，但不列出有关组的信息
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">-p, --indicator-style=slash 对目录加上表示符号&amp;#34;/&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">-q, --hide-control-chars print ? instead of nongraphic characters
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> --show-control-chars show nongraphic characters as-is (the default,
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> unless program is &amp;#39;&lt;/span>ls&lt;span class="s1">&amp;#39; and output is a terminal)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">-Q, --quote-name enclose entry names in double quotes
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> --quoting-style=WORD use quoting style WORD for entry names:
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> literal, locale, shell, shell-always, c, escape
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">-r, --reverse 逆序排列
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">-R, --recursive 递归显示子目录
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">-s, --size 以块数形式显示每个文件分配的尺寸
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">-S sort by file size
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> --sort=WORD sort by WORD instead of name: none (-U), size (-S),
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> time (-t), version (-v), extension (-X)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> --time=WORD with -l, show time as WORD instead of default
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> modification time: atime or access or use (-u)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> ctime or status (-c); also use specified time
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> as sort key if --sort=time
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> --time-style=STYLE with -l, show times using style STYLE:
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> full-iso, long-iso, iso, locale, or +FORMAT;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> FORMAT is interpreted like in &amp;#39;&lt;/span>date&lt;span class="s1">&amp;#39;; if FORMAT
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> is FORMAT1&amp;lt;newline&amp;gt;FORMAT2, then FORMAT1 applies
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> to non-recent files and FORMAT2 to recent files;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> if STYLE is prefixed with &amp;#39;&lt;/span>posix-&lt;span class="err">&amp;#39;&lt;/span>, STYLE
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> takes effect only outside the POSIX locale
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">-t sort by modification time, newest first
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">-T, --tabsize&lt;span class="o">=&lt;/span>COLS assume tab stops at each COLS instead of &lt;span class="m">8&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">-u with -lt: sort by, and show, access time&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> with -l: show access &lt;span class="nb">time&lt;/span> and sort by name&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> otherwise: sort by access &lt;span class="nb">time&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">-U &lt;span class="k">do&lt;/span> not sort&lt;span class="p">;&lt;/span> list entries in directory order
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">-v natural sort of &lt;span class="o">(&lt;/span>version&lt;span class="o">)&lt;/span> numbers within text
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">-w, --width&lt;span class="o">=&lt;/span>COLS assume screen width instead of current value
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">-x list entries by lines instead of by columns
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">-X sort alphabetically by entry extension
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">-1 list one file per line
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">SELinux options:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">--lcontext Display security context. Enable -l. Lines
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> will probably be too wide &lt;span class="k">for&lt;/span> most displays.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">-Z, --context Display security context so it fits on most
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> displays. Displays only mode, user, group,
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> security context and file name.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">--scontext Display only security context and file name.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --help 显示此帮助信息并退出
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --version 显示版本信息并退出
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>touch 路径和名字&lt;/p></description></item></channel></rss>

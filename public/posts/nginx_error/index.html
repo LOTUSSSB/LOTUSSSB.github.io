@@ -1,0 +1,283 @@
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><script data-goatcounter=https://goatcounter.lotusssb.com/count async src=//goatcounter.lotusssb.com/count.js></script><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>记录一次NGINX的错误 | LOTUS BLOG</title>
+<meta name=keywords content><meta name=description content="问题复现
+
+
+在网络中，发现css和js都正常加载了，但是在实际加载的网页中，只有front正常加载，css和js
+
+
+大概就是这种效果（悲
+我的nginx配置文件如下：
+
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+
+
+```bash
+user nginx;
+worker_processes auto;
+error_log /folder/log/error.log;
+pid /var/run/nginx.pid;
+
+events {
+    worker_connections 1024;
+}
+
+http{
+
+server {
+    listen 80;
+    server_name test.example,com;
+
+     location / {
+          root   /folder/nginx/html/dist;
+          index  index.html index.htm;
+     }
+
+
+寻求方法
+权限问题?
+一开始以为是静态文件static的权限问题，就在static文件夹下执行了chmod -R 775 *
+正则表达式映射?
+
+
+1
+2
+3
+4
+
+
+location ~ ^/(?<dir>[^/]+)/(?<file>[^/]+)$ {
+    gzip on;               
+    alias /folder/nginx/html/dist/static/$dir/$file;
+}
+
+
+SO上的一个回答，据说在加入这个后正则表达式就能匹配到静态文件"><meta name=author content="LOTU$"><link rel=canonical href=https://blog.lotussb.com/posts/nginx_error/><link crossorigin=anonymous href=/assets/css/stylesheet.54405a410796490bc874ab6181fac9b675753cc2b91375d8f882566459eca428.css integrity="sha256-VEBaQQeWSQvIdKthgfrJtnV1PMK5E3XY+IJWZFnspCg=" rel="preload stylesheet" as=style><link rel=icon href=https://blog.lotussb.com/%3C/favicon.ico%3E><link rel=icon type=image/png sizes=16x16 href=https://blog.lotussb.com/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://blog.lotussb.com/favicon-32x32.png><link rel=apple-touch-icon href=https://blog.lotussb.com/apple-touch-icon.png><link rel=mask-icon href=https://blog.lotussb.com/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=https://blog.lotussb.com/posts/nginx_error/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:title" content="记录一次NGINX的错误"><meta property="og:description" content="问题复现
+
+
+在网络中，发现css和js都正常加载了，但是在实际加载的网页中，只有front正常加载，css和js
+
+
+大概就是这种效果（悲
+我的nginx配置文件如下：
+
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+
+
+```bash
+user nginx;
+worker_processes auto;
+error_log /folder/log/error.log;
+pid /var/run/nginx.pid;
+
+events {
+    worker_connections 1024;
+}
+
+http{
+
+server {
+    listen 80;
+    server_name test.example,com;
+
+     location / {
+          root   /folder/nginx/html/dist;
+          index  index.html index.htm;
+     }
+
+
+寻求方法
+权限问题?
+一开始以为是静态文件static的权限问题，就在static文件夹下执行了chmod -R 775 *
+正则表达式映射?
+
+
+1
+2
+3
+4
+
+
+location ~ ^/(?<dir>[^/]+)/(?<file>[^/]+)$ {
+    gzip on;               
+    alias /folder/nginx/html/dist/static/$dir/$file;
+}
+
+
+SO上的一个回答，据说在加入这个后正则表达式就能匹配到静态文件"><meta property="og:type" content="article"><meta property="og:url" content="https://blog.lotussb.com/posts/nginx_error/"><meta property="og:image" content="https://blog.lotussb.com/NGINX-logo-rgb-large.png"><meta property="article:section" content="posts"><meta property="article:published_time" content="2023-09-24T00:08:57+08:00"><meta property="article:modified_time" content="2023-09-24T00:08:57+08:00"><meta property="og:site_name" content="LOTU$的个人博客"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://blog.lotussb.com/NGINX-logo-rgb-large.png"><meta name=twitter:title content="记录一次NGINX的错误"><meta name=twitter:description content="问题复现
+
+
+在网络中，发现css和js都正常加载了，但是在实际加载的网页中，只有front正常加载，css和js
+
+
+大概就是这种效果（悲
+我的nginx配置文件如下：
+
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+
+
+```bash
+user nginx;
+worker_processes auto;
+error_log /folder/log/error.log;
+pid /var/run/nginx.pid;
+
+events {
+    worker_connections 1024;
+}
+
+http{
+
+server {
+    listen 80;
+    server_name test.example,com;
+
+     location / {
+          root   /folder/nginx/html/dist;
+          index  index.html index.htm;
+     }
+
+
+寻求方法
+权限问题?
+一开始以为是静态文件static的权限问题，就在static文件夹下执行了chmod -R 775 *
+正则表达式映射?
+
+
+1
+2
+3
+4
+
+
+location ~ ^/(?<dir>[^/]+)/(?<file>[^/]+)$ {
+    gzip on;               
+    alias /folder/nginx/html/dist/static/$dir/$file;
+}
+
+
+SO上的一个回答，据说在加入这个后正则表达式就能匹配到静态文件"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://blog.lotussb.com/posts/"},{"@type":"ListItem","position":2,"name":"记录一次NGINX的错误","item":"https://blog.lotussb.com/posts/nginx_error/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"记录一次NGINX的错误","name":"记录一次NGINX的错误","description":"问题复现 在网络中，发现css和js都正常加载了，但是在实际加载的网页中，只有front正常加载，css和js\n大概就是这种效果（悲\n我的nginx配置文件如下：\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 ```bash user nginx; worker_processes auto; error_log /folder/log/error.log; pid /var/run/nginx.pid; events { worker_connections 1024; } http{ server { listen 80; server_name test.example,com; location / { root /folder/nginx/html/dist; index index.html index.htm; } 寻求方法 权限问题? 一开始以为是静态文件static的权限问题，就在static文件夹下执行了chmod -R 775 *\n正则表达式映射? 1 2 3 4 location ~ ^/(?\u0026lt;dir\u0026gt;[^/]+)/(?\u0026lt;file\u0026gt;[^/]+)$ { gzip on; alias /folder/nginx/html/dist/static/$dir/$file; } SO上的一个回答，据说在加入这个后正则表达式就能匹配到静态文件\n","keywords":[],"articleBody":"问题复现 在网络中，发现css和js都正常加载了，但是在实际加载的网页中，只有front正常加载，css和js\n大概就是这种效果（悲\n我的nginx配置文件如下：\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 ```bash user nginx; worker_processes auto; error_log /folder/log/error.log; pid /var/run/nginx.pid; events { worker_connections 1024; } http{ server { listen 80; server_name test.example,com; location / { root /folder/nginx/html/dist; index index.html index.htm; } 寻求方法 权限问题? 一开始以为是静态文件static的权限问题，就在static文件夹下执行了chmod -R 775 *\n正则表达式映射? 1 2 3 4 location ~ ^/(?[^/]+)/(?[^/]+)$ { gzip on; alias /folder/nginx/html/dist/static/$dir/$file; } SO上的一个回答，据说在加入这个后正则表达式就能匹配到静态文件\n浏览器的JS没开? 在Chrome中的隐私与安全大项下找到JavaScript，然后选择允许所有网站运行JavaScript\n解决方法 结果当然是，上述的所有办法，都没有生效\n最终发现，是因为我在nginx的配置中，没有开启mime type，导致浏览器无法识别css和js文件\n1 2 3 4 5 6 http{ include mime.types; default_type application/octet-stream; server { 总结 这算个常见问题吗，我觉得不算，\n因为我在网上找了很久都没有找到解决方法，最后还是自己摸索出来的\n可能因为这个问题也太蠢了(绷\n也算是给自己的一个记录吧(笑\n","wordCount":"99","inLanguage":"en","image":"https://blog.lotussb.com/NGINX-logo-rgb-large.png","datePublished":"2023-09-24T00:08:57+08:00","dateModified":"2023-09-24T00:08:57+08:00","author":{"@type":"Person","name":"LOTU$"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.lotussb.com/posts/nginx_error/"},"publisher":{"@type":"Organization","name":"LOTUS BLOG","logo":{"@type":"ImageObject","url":"https://blog.lotussb.com/%3C/favicon.ico%3E"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://blog.lotussb.com/ accesskey=h title="LOTUS BLOG (Alt + H)"><img src=https://blog.lotussb.com/apple-touch-icon.png alt aria-label=logo height=35>LOTUS BLOG</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://blog.lotussb.com/search/ title="搜索 (Alt + /)" accesskey=/><span>搜索</span></a></li><li><a href=https://blog.lotussb.com/archives/ title=归档><span>归档</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://blog.lotussb.com/>Home</a>&nbsp;»&nbsp;<a href=https://blog.lotussb.com/posts/>Posts</a></div><h1 class="post-title entry-hint-parent">记录一次NGINX的错误</h1><div class=post-meta><span title='2023-09-24 00:08:57 +0800 CST'>September 24, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;99 words&nbsp;·&nbsp;LOTU$</div></header><div class=toc><details open><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><nav id=TableOfContents><ul><li><a href=#问题复现>问题复现</a></li><li><a href=#寻求方法>寻求方法</a><ul><li><a href=#权限问题>权限问题?</a></li><li><a href=#正则表达式映射>正则表达式映射?</a></li><li><a href=#浏览器的js没开>浏览器的JS没开?</a></li></ul></li><li><a href=#解决方法>解决方法</a></li><li><a href=#总结>总结</a></li></ul></nav></div></details></div><div class=post-content><h2 id=问题复现>问题复现<a hidden class=anchor aria-hidden=true href=#问题复现>#</a></h2><p><img loading=lazy src=20230924002146.png alt></p><p>在网络中，发现css和js都正常加载了，但是在实际加载的网页中，只有front正常加载，css和js</p><p><img loading=lazy src=20230924004023.png alt></p><p>大概就是这种效果（悲</p><p>我的nginx配置文件如下：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-nginx data-lang=nginx><span class=line><span class=cl><span class=k>```bash</span>
+</span></span><span class=line><span class=cl><span class=s>user</span> <span class=s>nginx</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=k>worker_processes</span> <span class=s>auto</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=k>error_log</span> <span class=s>/folder/log/error.log</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=k>pid</span> <span class=s>/var/run/nginx.pid</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>events</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kn>worker_connections</span> <span class=mi>1024</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>http{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=s>server</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kn>listen</span> <span class=mi>80</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=kn>server_name</span> <span class=s>test.example,com</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>     <span class=kn>location</span> <span class=s>/</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>          <span class=kn>root</span>   <span class=s>/folder/nginx/html/dist</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>          <span class=kn>index</span>  <span class=s>index.html</span> <span class=s>index.htm</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>     <span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=寻求方法>寻求方法<a hidden class=anchor aria-hidden=true href=#寻求方法>#</a></h2><h3 id=权限问题>权限问题?<a hidden class=anchor aria-hidden=true href=#权限问题>#</a></h3><p>一开始以为是静态文件static的权限问题，就在static文件夹下执行了<code>chmod -R 775 *</code></p><h3 id=正则表达式映射>正则表达式映射?<a hidden class=anchor aria-hidden=true href=#正则表达式映射>#</a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-nginx data-lang=nginx><span class=line><span class=cl><span class=k>location</span> <span class=p>~</span> <span class=sr>^/(?&lt;dir&gt;[^/]+)/(?&lt;file&gt;[^/]+)$</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kn>gzip</span> <span class=no>on</span><span class=p>;</span>               
+</span></span><span class=line><span class=cl>    <span class=kn>alias</span> <span class=s>/folder/nginx/html/dist/static/</span><span class=nv>$dir/$file</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>SO上的一个回答，据说在加入这个后正则表达式就能匹配到静态文件</p><h3 id=浏览器的js没开>浏览器的JS没开?<a hidden class=anchor aria-hidden=true href=#浏览器的js没开>#</a></h3><p>在Chrome中的隐私与安全大项下找到JavaScript，然后选择允许所有网站运行JavaScript</p><p><img loading=lazy src=20230924005510.png alt></p><h2 id=解决方法>解决方法<a hidden class=anchor aria-hidden=true href=#解决方法>#</a></h2><p>结果当然是，上述的所有办法，都没有生效</p><p>最终发现，是因为我在nginx的配置中，没有开启mime type，导致浏览器无法识别css和js文件</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-nginx data-lang=nginx><span class=line><span class=cl><span class=k>http{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=s>include</span> <span class=s>mime.types</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>default_type</span> <span class=s>application/octet-stream</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>server</span> <span class=p>{</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=总结>总结<a hidden class=anchor aria-hidden=true href=#总结>#</a></h2><p>这算个常见问题吗，我觉得不算，</p><p>因为我在网上找了很久都没有找到解决方法，最后还是自己摸索出来的</p><p>可能因为这个问题也太蠢了(绷</p><p>也算是给自己的一个记录吧(笑</p></div><footer class=post-footer><ul class=post-tags></ul><nav class=paginav><a class=prev href=https://blog.lotussb.com/posts/improve_your_translation/><span class=title>« Prev</span><br><span>优化你的沉浸式翻译</span>
+</a><a class=next href=https://blog.lotussb.com/posts/build_your_own_docker/><span class=title>Next »</span><br><span>使用Linux命名空间、cgroups和chroot构建您自己的Docker：实践指南</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2024 <a href=https://blog.lotussb.com/>LOTUS BLOG</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

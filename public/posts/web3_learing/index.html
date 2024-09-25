@@ -1,0 +1,210 @@
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><script data-goatcounter=https://goatcounter.lotusssb.com/count async src=//goatcounter.lotusssb.com/count.js></script><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Web3学习 | LOTUS BLOG</title>
+<meta name=keywords content><meta name=description content="区块链技术与应用
+引言
+区块链不止是比特币，不要被比特币限制想象
+1.1
+
+
+
+
+
+
+
+
+BTC密码学原理
+比特币被称为加密货币，但是加密货币是不加密的，区块链所有内容都是公开的，例如转账金额，账户地址
+使用到两种哈希函数
+
+
+cryptographic hash function
+
+
+collison resistance (哈希碰撞)
+
+
+哈希碰撞 ：x ! = y, H (x) = H (y)
+一般来说，哈希碰撞是不可避免的，因为输入空间远大于输出空间（没有什么高效的方法使得哈希人为碰撞
+collison resistance的性质：找不到H(m&rsquo;) 与之相同
+H(m)  与  digest
+如果有人修改H(m),哈希值就会被修改
+没办法篡改内容而不被检测 (类似刷机时的检验md5值)(md5就是哈希的一种，不够已经不再安全了)
+x 可以推出 H(x)，但是反之不行
+
+
+hiding：hash函数的计算过程是单向的，是不可逆的。给定一个输入X，可以计算其hash值 H(X)，但是通过H(X)，很难知道其输出为X。当然蛮力求解也是一个办法。hiding性质的前提是：（1）输入空间较大；（2）输入的分布比较分散。
+
+
+digital commitment（digital equivalent of a sealed envelope）：通过collision resistance和hiding的性质，就可以得到digital commitment这个性质。
+
+
+举例：想要预测股市，但是又不能影响，只能把结果放在信封里面。
+预测结果不能提前公开，就需要用到sealed envelope(密封信封)，把 x 算出的哈希值公布出去，因为有哈希hiding的性质，又有collison resistance的性质，就能做到预测股市但是又不影响
+如果输入不满足hiding，常用把输如拼接随机数再哈希 H( x || nonce)
+
+puzzle friendly: 要想使得计算得到的hash值在某一个范围之内，则只能够一个一个的输入去尝试，很难直接找到某个值使得其hash值在某一个范围内。挖矿 也是就是这个意思。挖矿就是把区块中的一些信息+随机数进行hash，使得其结果前K位数为0，才能够满足要求。挖矿无捷径，只能够去大量的试。所以也就产生了 工作量证明（POW）。
+
+工作量证明(POW)
+就是做了大量的尝试之后，才得到符合要求的结果，这个过程叫做工作量证明。proof of work"><meta name=author content="LOTU$"><link rel=canonical href=https://blog.lotussb.com/posts/web3_learing/><link crossorigin=anonymous href=/assets/css/stylesheet.54405a410796490bc874ab6181fac9b675753cc2b91375d8f882566459eca428.css integrity="sha256-VEBaQQeWSQvIdKthgfrJtnV1PMK5E3XY+IJWZFnspCg=" rel="preload stylesheet" as=style><link rel=icon href=https://blog.lotussb.com/%3C/favicon.ico%3E><link rel=icon type=image/png sizes=16x16 href=https://blog.lotussb.com/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://blog.lotussb.com/favicon-32x32.png><link rel=apple-touch-icon href=https://blog.lotussb.com/apple-touch-icon.png><link rel=mask-icon href=https://blog.lotussb.com/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=https://blog.lotussb.com/posts/web3_learing/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:title" content="Web3学习"><meta property="og:description" content="区块链技术与应用
+引言
+区块链不止是比特币，不要被比特币限制想象
+1.1
+
+
+
+
+
+
+
+
+BTC密码学原理
+比特币被称为加密货币，但是加密货币是不加密的，区块链所有内容都是公开的，例如转账金额，账户地址
+使用到两种哈希函数
+
+
+cryptographic hash function
+
+
+collison resistance (哈希碰撞)
+
+
+哈希碰撞 ：x ! = y, H (x) = H (y)
+一般来说，哈希碰撞是不可避免的，因为输入空间远大于输出空间（没有什么高效的方法使得哈希人为碰撞
+collison resistance的性质：找不到H(m&rsquo;) 与之相同
+H(m)  与  digest
+如果有人修改H(m),哈希值就会被修改
+没办法篡改内容而不被检测 (类似刷机时的检验md5值)(md5就是哈希的一种，不够已经不再安全了)
+x 可以推出 H(x)，但是反之不行
+
+
+hiding：hash函数的计算过程是单向的，是不可逆的。给定一个输入X，可以计算其hash值 H(X)，但是通过H(X)，很难知道其输出为X。当然蛮力求解也是一个办法。hiding性质的前提是：（1）输入空间较大；（2）输入的分布比较分散。
+
+
+digital commitment（digital equivalent of a sealed envelope）：通过collision resistance和hiding的性质，就可以得到digital commitment这个性质。
+
+
+举例：想要预测股市，但是又不能影响，只能把结果放在信封里面。
+预测结果不能提前公开，就需要用到sealed envelope(密封信封)，把 x 算出的哈希值公布出去，因为有哈希hiding的性质，又有collison resistance的性质，就能做到预测股市但是又不影响
+如果输入不满足hiding，常用把输如拼接随机数再哈希 H( x || nonce)
+
+puzzle friendly: 要想使得计算得到的hash值在某一个范围之内，则只能够一个一个的输入去尝试，很难直接找到某个值使得其hash值在某一个范围内。挖矿 也是就是这个意思。挖矿就是把区块中的一些信息+随机数进行hash，使得其结果前K位数为0，才能够满足要求。挖矿无捷径，只能够去大量的试。所以也就产生了 工作量证明（POW）。
+
+工作量证明(POW)
+就是做了大量的尝试之后，才得到符合要求的结果，这个过程叫做工作量证明。proof of work"><meta property="og:type" content="article"><meta property="og:url" content="https://blog.lotussb.com/posts/web3_learing/"><meta property="og:image" content="https://blog.lotussb.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="article:section" content="posts"><meta property="article:published_time" content="2023-03-30T00:00:36+08:00"><meta property="article:modified_time" content="2023-03-30T00:00:36+08:00"><meta property="og:site_name" content="LOTU$的个人博客"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://blog.lotussb.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content="Web3学习"><meta name=twitter:description content="区块链技术与应用
+引言
+区块链不止是比特币，不要被比特币限制想象
+1.1
+
+
+
+
+
+
+
+
+BTC密码学原理
+比特币被称为加密货币，但是加密货币是不加密的，区块链所有内容都是公开的，例如转账金额，账户地址
+使用到两种哈希函数
+
+
+cryptographic hash function
+
+
+collison resistance (哈希碰撞)
+
+
+哈希碰撞 ：x ! = y, H (x) = H (y)
+一般来说，哈希碰撞是不可避免的，因为输入空间远大于输出空间（没有什么高效的方法使得哈希人为碰撞
+collison resistance的性质：找不到H(m&rsquo;) 与之相同
+H(m)  与  digest
+如果有人修改H(m),哈希值就会被修改
+没办法篡改内容而不被检测 (类似刷机时的检验md5值)(md5就是哈希的一种，不够已经不再安全了)
+x 可以推出 H(x)，但是反之不行
+
+
+hiding：hash函数的计算过程是单向的，是不可逆的。给定一个输入X，可以计算其hash值 H(X)，但是通过H(X)，很难知道其输出为X。当然蛮力求解也是一个办法。hiding性质的前提是：（1）输入空间较大；（2）输入的分布比较分散。
+
+
+digital commitment（digital equivalent of a sealed envelope）：通过collision resistance和hiding的性质，就可以得到digital commitment这个性质。
+
+
+举例：想要预测股市，但是又不能影响，只能把结果放在信封里面。
+预测结果不能提前公开，就需要用到sealed envelope(密封信封)，把 x 算出的哈希值公布出去，因为有哈希hiding的性质，又有collison resistance的性质，就能做到预测股市但是又不影响
+如果输入不满足hiding，常用把输如拼接随机数再哈希 H( x || nonce)
+
+puzzle friendly: 要想使得计算得到的hash值在某一个范围之内，则只能够一个一个的输入去尝试，很难直接找到某个值使得其hash值在某一个范围内。挖矿 也是就是这个意思。挖矿就是把区块中的一些信息+随机数进行hash，使得其结果前K位数为0，才能够满足要求。挖矿无捷径，只能够去大量的试。所以也就产生了 工作量证明（POW）。
+
+工作量证明(POW)
+就是做了大量的尝试之后，才得到符合要求的结果，这个过程叫做工作量证明。proof of work"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://blog.lotussb.com/posts/"},{"@type":"ListItem","position":2,"name":"Web3学习","item":"https://blog.lotussb.com/posts/web3_learing/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Web3学习","name":"Web3学习","description":"区块链技术与应用 引言 区块链不止是比特币，不要被比特币限制想象 1.1 BTC密码学原理 比特币被称为加密货币，但是加密货币是不加密的，区块链所有内容都是公开的，例如转账金额，账户地址\n使用到两种哈希函数\ncryptographic hash function\ncollison resistance (哈希碰撞)\n哈希碰撞 ：x ! = y, H (x) = H (y)\n一般来说，哈希碰撞是不可避免的，因为输入空间远大于输出空间（没有什么高效的方法使得哈希人为碰撞\ncollison resistance的性质：找不到H(m\u0026rsquo;) 与之相同\nH(m) 与 digest\n如果有人修改H(m),哈希值就会被修改\n没办法篡改内容而不被检测 (类似刷机时的检验md5值)(md5就是哈希的一种，不够已经不再安全了)\nx 可以推出 H(x)，但是反之不行\nhiding：hash函数的计算过程是单向的，是不可逆的。给定一个输入X，可以计算其hash值 H(X)，但是通过H(X)，很难知道其输出为X。当然蛮力求解也是一个办法。hiding性质的前提是：（1）输入空间较大；（2）输入的分布比较分散。\ndigital commitment（digital equivalent of a sealed envelope）：通过collision resistance和hiding的性质，就可以得到digital commitment这个性质。\n举例：想要预测股市，但是又不能影响，只能把结果放在信封里面。\n预测结果不能提前公开，就需要用到sealed envelope(密封信封)，把 x 算出的哈希值公布出去，因为有哈希hiding的性质，又有collison resistance的性质，就能做到预测股市但是又不影响\n如果输入不满足hiding，常用把输如拼接随机数再哈希 H( x || nonce)\npuzzle friendly: 要想使得计算得到的hash值在某一个范围之内，则只能够一个一个的输入去尝试，很难直接找到某个值使得其hash值在某一个范围内。挖矿 也是就是这个意思。挖矿就是把区块中的一些信息+随机数进行hash，使得其结果前K位数为0，才能够满足要求。挖矿无捷径，只能够去大量的试。所以也就产生了 工作量证明（POW）。 工作量证明(POW) 就是做了大量的尝试之后，才得到符合要求的结果，这个过程叫做工作量证明。proof of work\n","keywords":[],"articleBody":"区块链技术与应用 引言 区块链不止是比特币，不要被比特币限制想象 1.1 BTC密码学原理 比特币被称为加密货币，但是加密货币是不加密的，区块链所有内容都是公开的，例如转账金额，账户地址\n使用到两种哈希函数\ncryptographic hash function\ncollison resistance (哈希碰撞)\n哈希碰撞 ：x ! = y, H (x) = H (y)\n一般来说，哈希碰撞是不可避免的，因为输入空间远大于输出空间（没有什么高效的方法使得哈希人为碰撞\ncollison resistance的性质：找不到H(m’) 与之相同\nH(m) 与 digest\n如果有人修改H(m),哈希值就会被修改\n没办法篡改内容而不被检测 (类似刷机时的检验md5值)(md5就是哈希的一种，不够已经不再安全了)\nx 可以推出 H(x)，但是反之不行\nhiding：hash函数的计算过程是单向的，是不可逆的。给定一个输入X，可以计算其hash值 H(X)，但是通过H(X)，很难知道其输出为X。当然蛮力求解也是一个办法。hiding性质的前提是：（1）输入空间较大；（2）输入的分布比较分散。\ndigital commitment（digital equivalent of a sealed envelope）：通过collision resistance和hiding的性质，就可以得到digital commitment这个性质。\n举例：想要预测股市，但是又不能影响，只能把结果放在信封里面。\n预测结果不能提前公开，就需要用到sealed envelope(密封信封)，把 x 算出的哈希值公布出去，因为有哈希hiding的性质，又有collison resistance的性质，就能做到预测股市但是又不影响\n如果输入不满足hiding，常用把输如拼接随机数再哈希 H( x || nonce)\npuzzle friendly: 要想使得计算得到的hash值在某一个范围之内，则只能够一个一个的输入去尝试，很难直接找到某个值使得其hash值在某一个范围内。挖矿 也是就是这个意思。挖矿就是把区块中的一些信息+随机数进行hash，使得其结果前K位数为0，才能够满足要求。挖矿无捷径，只能够去大量的试。所以也就产生了 工作量证明（POW）。 工作量证明(POW) 就是做了大量的尝试之后，才得到符合要求的结果，这个过程叫做工作量证明。proof of work\nH(block header) \u003c= target\n工作量证明的目的：为了防止恶意节点篡改区块链的历史记录，需要让恶意节点付出巨大的代价，才能够篡改区块链的历史记录。\n比特币用的函数是 SHA256 Secure Hash Algorithm 256 上面的性质都是满足的\n签名\n比特币中的账户管理 创立账户很简单，就是创立公钥(public key)和私钥(private key)的对\n公私钥体系(非对称加密体系)(asymmetric cryptography) 好处–\u003e公钥是不用保密的，私钥保存在本地就行，不需要传出去\n万一两个人产生的公私钥对相同怎么办 疯狂产生私钥，直到产生一个不同的私钥。。？ 理论上可以，实际上不可行，因为私钥的空间太大了，不可能产生相同的私钥\n产生公私钥的时候，需要一个随机源，这个随机数就是私钥 a good source of randomness 比特币算法不仅有生成，还有好的随机源\nBTC的数据结构 哈希指针：指向一个哈希值的指针 一个最基本的数据结构就是区块链 区块链是一个链表，每个节点是一个区块 区块链跟普通的链表的不同，就是哈希指针代替了普通的指针 Block chain is a linked list with hash pointers 通过这样的数据结构 可以实现tamper-evident(篡改可见) 其中任意一个修改了，接下来都会变\n以分割线为主体，我怎么知道我的哈希值是不是对的呢，跟后面的哈希值比对就知道了\nMerkle tree轻节点 只要记录根节点的哈希值，就能够知道整个树的哈希值 这样保护了整棵树\nMerkle proof 绿色和红色的相结合能一级一级证明\nSorted Merkle tree 排序的tree（？\n除了循环链表都能用哈希指针\nBTC协议 如何设计出一个币 假如大家都有一个信任的中心化系统\n数字货币跟纸质货币的区别 double spending attack(双花) 数字货币最主要防范的攻击\n要维护一个表，记录每个币的状态（中心化的方案\nBTC解决问题：提出了一个去中心化的方案 两个问题 货币的发行问题：\n防范double spending attack\n每一个交易都是一个输入和一个输出 可以防范双花攻击\nBlock header 区块头 version 版本信息，比特币哪个版本 hash of previous block header 区块链中指向前一个区块的指针 merkle root hash merkle根哈希值 target 挖矿难度目标阈值 nanonce 随机数\nBlock body 区块体 transaction list 交易列表 full node(fully validating node) 全节点 light node 轻节点\n账本的内容要取得分布式共识 distributed consensus 账本的内容要取得分布式共识 distributed hash table 分布式哈希表 impossible result FLP asynchronous network 异步网络 faulty CAP Theorem Consistency 一致性 Availability 可用性 Partition tolerance 分区容错性\nConsensus in BitCorn 比特币中的共识协议 membership 投票权 sybil attack 虚假身份攻击(女巫攻击) 简单的投票不行，因为有虚假身份攻击(别人不知道你是谁)，所以需要工作量证明(POW)\n接受的区块是最长的链longest valid chain forking attack 分叉攻击 记账权 获得记账权绝对哪些区块可以写到下个节点，但是设计权益的时候，不应该让这个成为争夺记账权的主要动力(我们希望合法的交易都写到区块链里面)\n巧妙的机制:block reward 区块奖励 coninbase transaction 发行新的比特币的方法(凭空造出来的) 每个区块奖励50个比特币，21w个区块之后减半\nmining 挖矿 挖矿的目的是为了获得记账权\nBTC实现 transaction-base ledger 交易型账本 比特币全节点维护一个叫UTXO的数据结构(unspent transaction output 未花费的交易输出)\ntotal inputs = total outputs 有时候不是相等的，因为有手续费，手续费是给矿工的\n比特币的奖励机制： transaction fee 交易费\n挖矿主要是拿出块奖励\n比特币被设计为每隔十分钟产生一个新的区块\n（21万10分钟）/（60分钟24小时*365天） 也就是平均每四年（出块奖励）减半\naccount-base ledger 账户型账本(ETH的模式) 账户型，系统要显示每个账户有多少币\n比特币做交易需要说明这个币的来源，以太坊就不需要\n每次挖矿可以看作是Bernoulli trial Bernoulli trial:a random experiment with binary outcome 伯努利试验(二项分布(扔硬币))\n每个Bernoulli trial构成了Bernoulli process Bernoulli process: a sequence of independent Bernoulli trials 伯努利过程\nBernoulli trial特性是无记忆性 memoryless property: the probability of the next outcome is independent of the past outcomes 无记忆性\nPoisson process 泊松过程\n区块时间符合 xponential distribution 指数分布\n虽然平均出块是10分钟，但是不是10分钟没挖到，过一会就能出，他是符合这个指数分布的， 也就是说，将来还要挖多少时间，他都是符合这个分布的（Poisson process 泊松过程）\nQ:如果不是Poisson process 泊松过程，会出现怎样？ A:算力强的矿工会有很大优势，算力强的矿工过去做的工作是多的\nQ:如果有90%的算力在诚实矿工手里，10%在坏矿工手里，他能偷币吗 A:不能，他无法伪造签名\n假设M节点是恶意的\n诚实的节点会沿着m前的区块继续挖，而不是接着m\n对于m是很难受的，因为的他消耗了挖出这个区块的算力\nQ:如何防范m到a转账后，又有另外一条链把m花出去的钱收回来呢（double spending attack） A:在转账后面跟好几个区块（多等几个区块，多等几个确认） 如果他确认需要6个区块，我偷偷在下面挖，等到他6个区块结束的时候，我公布我的7个区块，这样也能达成攻击 这种攻击叫做selfish mining attack 自私挖矿攻击 前提:有恶意的节点占据更多的算力\nQ:除了forking attack,selfish mining还能做什么 A:让别人做无用功😆\nBTC网络 btc1是p2p的网络\napplication layer:Bitcoin Block chain network layer: P2P Overlay Network\n节点间通过tcp通信（利于穿过防火墙）\nbtc网络设计原则: simple,robust（耐艹）,but not effictive\n消息传播在网络中采取叫flooding的方式\n对区块大小有限制：1M\nbtc传播属于best effort\n挖矿难度 挖矿时间简短，增加出块速度，不是好事吗？\nQ:出块时间短，会发送什么？ A:比如不到1s就出块，btc网络可能需要很久才能传递这个区块，如果别的区块差不多也出了一个区块，这会形成分叉，出块时间越短，分叉会越来越多，会影响安全性\nQ:出块不是越短越好，那10分钟就最好吗？ A:不是\n//以太坊设计了一个新的协议ghost\n无论出块时间设置为多长，都需要不断调整难度，来保证出块时间的稳定\nQ:怎么调整挖矿难度? A:随target和actual time和expected time变化\n挖矿 比特币安全性的保证:密码学和共识机制（好矿工）\n现在挖矿的主要手段: ASIC=Application-specific integrated circuit(专用集成电路)\n挖矿的另一个趋势：大矿工（矿池）\n单个矿工还需要承担全节点的责任，所以引入矿池\n矿池有一个管理者pool manager 有n个miner，miner负责计算hash值\nQ:收益该如何分配？ A:通过矿池特定的通讯协议，依靠矿工的pow分配\nQ:如果有个矿池占到了51%以上的算力，能发动什么攻击呢 A:最常见为分叉攻击（坏节点获得记账权）\nBTC脚本 不断把数据压入栈\n分叉 state fork\ndeliberate fork\nprotocd fork\n硬分叉和软分叉、\nsoft：\nhard fork: 所有的系统都必须更新软件，否则不能接入节点 硬分叉的一个例子：区块大小 block size limit\nP2SH\n","wordCount":"395","inLanguage":"en","image":"https://blog.lotussb.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E","datePublished":"2023-03-30T00:00:36+08:00","dateModified":"2023-03-30T00:00:36+08:00","author":{"@type":"Person","name":"LOTU$"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.lotussb.com/posts/web3_learing/"},"publisher":{"@type":"Organization","name":"LOTUS BLOG","logo":{"@type":"ImageObject","url":"https://blog.lotussb.com/%3C/favicon.ico%3E"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://blog.lotussb.com/ accesskey=h title="LOTUS BLOG (Alt + H)"><img src=https://blog.lotussb.com/apple-touch-icon.png alt aria-label=logo height=35>LOTUS BLOG</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://blog.lotussb.com/search/ title="搜索 (Alt + /)" accesskey=/><span>搜索</span></a></li><li><a href=https://blog.lotussb.com/archives/ title=归档><span>归档</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://blog.lotussb.com/>Home</a>&nbsp;»&nbsp;<a href=https://blog.lotussb.com/posts/>Posts</a></div><h1 class="post-title entry-hint-parent">Web3学习</h1><div class=post-meta><span title='2023-03-30 00:00:36 +0800 CST'>March 30, 2023</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;395 words&nbsp;·&nbsp;LOTU$</div></header><div class=toc><details open><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><nav id=TableOfContents><ul><li><a href=#引言>引言</a></li><li><a href=#btc密码学原理>BTC密码学原理</a><ul><li><a href=#工作量证明pow>工作量证明(POW)</a></li></ul></li><li><a href=#btc的数据结构>BTC的数据结构</a><ul><li><a href=#哈希指针指向一个哈希值的指针>哈希指针：指向一个哈希值的指针</a></li><li><a href=#merkle-tree轻节点>Merkle tree轻节点</a></li><li><a href=#merkle-proof>Merkle proof</a></li></ul></li><li><a href=#btc协议>BTC协议</a><ul><li><a href=#btc解决问题提出了一个去中心化的方案>BTC解决问题：提出了一个去中心化的方案</a></li><li><a href=#block-header-区块头>Block header 区块头</a></li><li><a href=#block-body-区块体>Block body 区块体</a></li><li><a href=#consensus-in-bitcorn-比特币中的共识协议>Consensus in BitCorn 比特币中的共识协议</a></li></ul></li><li><a href=#btc实现>BTC实现</a><ul><li><a href=#transaction-base-ledger-交易型账本>transaction-base ledger 交易型账本</a></li><li><a href=#account-base-ledger-账户型账本eth的模式>account-base ledger 账户型账本(ETH的模式)</a></li></ul></li><li><a href=#btc网络>BTC网络</a></li><li><a href=#application-layerbitcoin-block-chain>application layer:Bitcoin Block chain</a></li><li><a href=#挖矿难度>挖矿难度</a></li><li><a href=#挖矿>挖矿</a></li><li><a href=#btc脚本>BTC脚本</a></li><li><a href=#分叉>分叉</a></li></ul></nav></div></details></div><div class=post-content><h1 id=区块链技术与应用>区块链技术与应用<a hidden class=anchor aria-hidden=true href=#区块链技术与应用>#</a></h1><h2 id=引言>引言<a hidden class=anchor aria-hidden=true href=#引言>#</a></h2><p>区块链不止是比特币，不要被比特币限制想象
+1.1
+<img loading=lazy src=20230330000942.png alt></p><p><img loading=lazy src=20230330001101.png alt></p><p><img loading=lazy src=20230330001115.png alt></p><p><img loading=lazy src=20230330001320.png alt></p><h2 id=btc密码学原理>BTC密码学原理<a hidden class=anchor aria-hidden=true href=#btc密码学原理>#</a></h2><p>比特币被称为加密货币，但是加密货币是不加密的，区块链所有内容都是公开的，例如转账金额，账户地址</p><p>使用到两种哈希函数</p><ul><li><p><strong>cryptographic hash function</strong></p></li><li><p><strong>collison resistance (哈希碰撞)</strong></p></li></ul><p>哈希碰撞 ：x ! = y, H (x) = H (y)</p><p>一般来说，哈希碰撞是不可避免的，因为输入空间远大于输出空间（没有什么高效的方法使得哈希人为碰撞</p><p><strong>collison resistance的性质：找不到H(m&rsquo;) 与之相同</strong></p><p>H(m) 与 digest</p><p><strong>如果有人修改H(m),哈希值就会被修改</strong></p><p>没办法篡改内容而不被检测 (类似刷机时的检验md5值)(md5就是哈希的一种，不够已经不再安全了)</p><p>x 可以推出 H(x)，但是反之不行</p><ul><li><p><strong>hiding</strong>：hash函数的计算过程是单向的，是不可逆的。给定一个输入X，可以计算其hash值 H(X)，但是通过H(X)，很难知道其输出为X。当然蛮力求解也是一个办法。hiding性质的前提是：（1）输入空间较大；（2）输入的分布比较分散。</p></li><li><p><strong>digital commitment（digital equivalent of a sealed envelope）</strong>：通过collision resistance和hiding的性质，就可以得到digital commitment这个性质。</p></li></ul><p>举例：想要预测股市，但是又不能影响，只能把结果放在信封里面。</p><p>预测结果不能提前公开，就需要用到sealed envelope(密封信封)，把 x 算出的哈希值公布出去，因为有哈希hiding的性质，又有collison resistance的性质，就能做到预测股市但是又不影响</p><p>如果输入不满足hiding，常用把输如拼接随机数再哈希 <strong>H( x || nonce)</strong></p><ul><li><strong>puzzle friendly</strong>: 要想使得计算得到的hash值在某一个范围之内，则只能够一个一个的输入去尝试，很难直接找到某个值使得其hash值在某一个范围内。挖矿 也是就是这个意思。挖矿就是把区块中的一些信息+随机数进行hash，使得其结果前K位数为0，才能够满足要求。挖矿无捷径，只能够去大量的试。所以也就产生了 工作量证明（POW）。</li></ul><h3 id=工作量证明pow>工作量证明(POW)<a hidden class=anchor aria-hidden=true href=#工作量证明pow>#</a></h3><p>就是做了大量的尝试之后，才得到符合要求的结果，这个过程叫做工作量证明。proof of work</p><p>H(block header) &lt;= target</p><p><strong>工作量证明的目的</strong>：为了防止恶意节点篡改区块链的历史记录，需要让恶意节点付出巨大的代价，才能够篡改区块链的历史记录。</p><p>比特币用的函数是 SHA256
+Secure Hash Algorithm 256
+上面的性质都是满足的</p><p>签名</p><p>比特币中的账户管理
+创立账户很简单，就是创立公钥(public key)和私钥(private key)的对</p><p>公私钥体系(非对称加密体系)(asymmetric cryptography)
+好处&ndash;>公钥是不用保密的，私钥保存在本地就行，不需要传出去</p><p>万一两个人产生的公私钥对相同怎么办
+疯狂产生私钥，直到产生一个不同的私钥。。？
+理论上可以，实际上不可行，因为私钥的空间太大了，不可能产生相同的私钥</p><p>产生公私钥的时候，需要一个随机源，这个随机数就是私钥
+a good source of randomness
+比特币算法不仅有生成，还有好的随机源</p><h2 id=btc的数据结构>BTC的数据结构<a hidden class=anchor aria-hidden=true href=#btc的数据结构>#</a></h2><h3 id=哈希指针指向一个哈希值的指针>哈希指针：指向一个哈希值的指针<a hidden class=anchor aria-hidden=true href=#哈希指针指向一个哈希值的指针>#</a></h3><p>一个最基本的数据结构就是区块链
+区块链是一个链表，每个节点是一个区块
+区块链跟普通的链表的不同，就是哈希指针代替了普通的指针
+Block chain is a linked list with hash pointers
+<img loading=lazy src=20230704232615.png alt></p><p>通过这样的数据结构
+可以实现tamper-evident(篡改可见)
+其中任意一个修改了，接下来都会变</p><p><img loading=lazy src=20230704232917.png alt></p><p>以分割线为主体，我怎么知道我的哈希值是不是对的呢，跟后面的哈希值比对就知道了</p><h3 id=merkle-tree轻节点>Merkle tree轻节点<a hidden class=anchor aria-hidden=true href=#merkle-tree轻节点>#</a></h3><p><img loading=lazy src=20230704233308.png alt>
+只要记录根节点的哈希值，就能够知道整个树的哈希值
+这样保护了整棵树</p><h3 id=merkle-proof>Merkle proof<a hidden class=anchor aria-hidden=true href=#merkle-proof>#</a></h3><p><img loading=lazy src=20230704233648.png alt></p><p>绿色和红色的相结合能一级一级证明</p><p>Sorted Merkle tree
+排序的tree（？</p><p>除了循环链表都能用哈希指针</p><h2 id=btc协议>BTC协议<a hidden class=anchor aria-hidden=true href=#btc协议>#</a></h2><p>如何设计出一个币
+假如大家都有一个信任的中心化系统</p><p>数字货币跟纸质货币的区别
+double spending attack(双花)
+数字货币最主要防范的攻击</p><p>要维护一个表，记录每个币的状态（中心化的方案</p><h3 id=btc解决问题提出了一个去中心化的方案>BTC解决问题：提出了一个去中心化的方案<a hidden class=anchor aria-hidden=true href=#btc解决问题提出了一个去中心化的方案>#</a></h3><p>两个问题
+货币的发行问题：</p><p>防范double spending attack</p><p><img loading=lazy src=20230704235811.png alt></p><p>每一个交易都是一个输入和一个输出
+可以防范双花攻击</p><h3 id=block-header-区块头>Block header 区块头<a hidden class=anchor aria-hidden=true href=#block-header-区块头>#</a></h3><p>version 版本信息，比特币哪个版本
+hash of previous block header 区块链中指向前一个区块的指针
+merkle root hash merkle根哈希值
+target 挖矿难度目标阈值
+nanonce 随机数</p><h3 id=block-body-区块体>Block body 区块体<a hidden class=anchor aria-hidden=true href=#block-body-区块体>#</a></h3><p>transaction list 交易列表
+<img loading=lazy src=20230707201346.png alt="Block body在下 Block header在上">
+full node(fully validating node) 全节点
+light node 轻节点</p><p>账本的内容要取得分布式共识
+distributed consensus 账本的内容要取得分布式共识
+distributed hash table 分布式哈希表
+impossible result FLP
+asynchronous network 异步网络
+faulty
+CAP Theorem
+Consistency 一致性
+Availability 可用性
+Partition tolerance 分区容错性</p><h3 id=consensus-in-bitcorn-比特币中的共识协议>Consensus in BitCorn 比特币中的共识协议<a hidden class=anchor aria-hidden=true href=#consensus-in-bitcorn-比特币中的共识协议>#</a></h3><h4 id=membership-投票权>membership 投票权<a hidden class=anchor aria-hidden=true href=#membership-投票权>#</a></h4><p>sybil attack 虚假身份攻击(女巫攻击)
+简单的投票不行，因为有虚假身份攻击(别人不知道你是谁)，所以需要工作量证明(POW)</p><p>接受的区块是最长的链longest valid chain
+forking attack 分叉攻击
+<img loading=lazy src=20230707203250.png alt></p><h4 id=记账权>记账权<a hidden class=anchor aria-hidden=true href=#记账权>#</a></h4><p>获得记账权绝对哪些区块可以写到下个节点，但是设计权益的时候，不应该让这个成为争夺记账权的主要动力(我们希望合法的交易都写到区块链里面)</p><p>巧妙的机制:block reward 区块奖励
+coninbase transaction <strong>发行</strong>新的比特币的方法(凭空造出来的)
+每个区块奖励50个比特币，21w个区块之后减半</p><h4 id=mining-挖矿>mining 挖矿<a hidden class=anchor aria-hidden=true href=#mining-挖矿>#</a></h4><p>挖矿的目的是为了获得记账权</p><h2 id=btc实现>BTC实现<a hidden class=anchor aria-hidden=true href=#btc实现>#</a></h2><h3 id=transaction-base-ledger-交易型账本>transaction-base ledger 交易型账本<a hidden class=anchor aria-hidden=true href=#transaction-base-ledger-交易型账本>#</a></h3><p>比特币全节点维护一个叫UTXO的数据结构(unspent transaction output 未花费的交易输出)</p><p>total inputs = total outputs
+有时候不是相等的，因为有手续费，手续费是给矿工的</p><p>比特币的奖励机制：
+transaction fee 交易费</p><p>挖矿主要是拿出块奖励</p><p>比特币被设计为每隔十分钟产生一个新的区块</p><p>（21万<em>10分钟）/（60分钟</em>24小时*365天）
+也就是平均每四年（出块奖励）减半</p><h3 id=account-base-ledger-账户型账本eth的模式>account-base ledger 账户型账本(ETH的模式)<a hidden class=anchor aria-hidden=true href=#account-base-ledger-账户型账本eth的模式>#</a></h3><p>账户型，系统要显示每个账户有多少币</p><p>比特币做交易需要说明这个币的来源，以太坊就不需要</p><p><img loading=lazy src=20240419162351.png alt></p><p>每次挖矿可以看作是Bernoulli trial
+Bernoulli trial:a random experiment with binary outcome 伯努利试验(二项分布(扔硬币))</p><p>每个Bernoulli trial构成了Bernoulli process
+Bernoulli process: a sequence of independent Bernoulli trials 伯努利过程</p><p>Bernoulli trial特性是无记忆性
+memoryless property: the probability of the next outcome is independent of the past outcomes 无记忆性</p><p>Poisson process 泊松过程</p><p>区块时间符合 xponential distribution 指数分布</p><p><img loading=lazy src=20240419164918.png alt></p><p>虽然平均出块是10分钟，但是不是10分钟没挖到，过一会就能出，他是符合这个指数分布的，
+也就是说，将来还要挖多少时间，他都是符合这个分布的（Poisson process 泊松过程）</p><p>Q:如果不是Poisson process 泊松过程，会出现怎样？
+A:算力强的矿工会有很大优势，算力强的矿工过去做的工作是多的</p><p><img loading=lazy src=20240419165800.png alt></p><p>Q:如果有90%的算力在诚实矿工手里，10%在坏矿工手里，他能偷币吗
+A:不能，他无法伪造签名</p><p>假设M节点是恶意的</p><p>诚实的节点会沿着m前的区块继续挖，而不是接着m</p><p>对于m是很难受的，因为的他消耗了挖出这个区块的算力</p><p><img loading=lazy src=20240419170559.png alt>
+Q:如何防范m到a转账后，又有另外一条链把m花出去的钱收回来呢（double spending attack）
+A:在转账后面跟好几个区块（多等几个区块，多等几个确认）
+<img loading=lazy src=20230708002621.png alt></p><p><img loading=lazy src=20240419171244.png alt></p><p>如果他确认需要6个区块，我偷偷在下面挖，等到他6个区块结束的时候，我公布我的7个区块，这样也能达成攻击
+这种攻击叫做selfish mining attack 自私挖矿攻击
+前提:有恶意的节点占据更多的算力</p><p>Q:除了forking attack,selfish mining还能做什么
+A:让别人做无用功😆</p><h2 id=btc网络>BTC网络<a hidden class=anchor aria-hidden=true href=#btc网络>#</a></h2><p>btc1是p2p的网络</p><h2 id=application-layerbitcoin-block-chain>application layer:Bitcoin Block chain<a hidden class=anchor aria-hidden=true href=#application-layerbitcoin-block-chain>#</a></h2><p>network layer: P2P Overlay Network</p><p>节点间通过tcp通信（利于穿过防火墙）</p><p>btc网络设计原则: simple,robust（耐艹）,but not effictive</p><p>消息传播在网络中采取叫flooding的方式</p><p>对区块大小有限制：1M</p><p>btc传播属于best effort</p><h2 id=挖矿难度>挖矿难度<a hidden class=anchor aria-hidden=true href=#挖矿难度>#</a></h2><p>挖矿时间简短，增加出块速度，不是好事吗？</p><p>Q:出块时间短，会发送什么？
+A:比如不到1s就出块，btc网络可能需要很久才能传递这个区块，如果别的区块差不多也出了一个区块，这会形成分叉，出块时间越短，分叉会越来越多，会影响安全性</p><p>Q:出块不是越短越好，那10分钟就最好吗？
+A:不是</p><p>//以太坊设计了一个新的协议ghost</p><p>无论出块时间设置为多长，都需要不断调整难度，来保证出块时间的稳定</p><p>Q:怎么调整挖矿难度?
+A:随target和actual time和expected time变化</p><p><img loading=lazy src=20240507174329.png alt></p><h2 id=挖矿>挖矿<a hidden class=anchor aria-hidden=true href=#挖矿>#</a></h2><p><img loading=lazy src=20240507174836.png alt></p><p><img loading=lazy src=20240507174822.png alt></p><p>比特币安全性的保证:密码学和共识机制（好矿工）</p><p>现在挖矿的主要手段: ASIC=Application-specific integrated circuit(专用集成电路)</p><p>挖矿的另一个趋势：大矿工（矿池）</p><p>单个矿工还需要承担全节点的责任，所以引入矿池</p><p>矿池有一个管理者pool manager
+有n个miner，miner负责计算hash值</p><p>Q:收益该如何分配？
+A:通过矿池特定的通讯协议，依靠矿工的pow分配</p><p>Q:如果有个矿池占到了51%以上的算力，能发动什么攻击呢
+A:最常见为分叉攻击（坏节点获得记账权）</p><h2 id=btc脚本>BTC脚本<a hidden class=anchor aria-hidden=true href=#btc脚本>#</a></h2><p><img loading=lazy src=20240507203314.png alt></p><p>不断把数据压入栈</p><h2 id=分叉>分叉<a hidden class=anchor aria-hidden=true href=#分叉>#</a></h2><p>state fork</p><p>deliberate fork</p><p>protocd fork</p><p>硬分叉和软分叉、</p><p>soft：</p><p>hard fork:
+所有的系统都必须更新软件，否则不能接入节点
+硬分叉的一个例子：区块大小 block size limit</p><p>P2SH</p></div><footer class=post-footer><ul class=post-tags></ul><nav class=paginav><a class=prev href=https://blog.lotussb.com/posts/flask_learning/><span class=title>« Prev</span><br><span>Flask学习</span>
+</a><a class=next href=https://blog.lotussb.com/posts/hugo_deploy/><span class=title>Next »</span><br><span>Hugo+Github Pages搭建</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2024 <a href=https://blog.lotussb.com/>LOTUS BLOG</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

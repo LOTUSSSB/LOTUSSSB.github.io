@@ -1,0 +1,308 @@
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><script data-goatcounter=https://goatcounter.lotusssb.com/count async src=//goatcounter.lotusssb.com/count.js></script><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Hugo+Github Pages搭建 | LOTUS BLOG</title>
+<meta name=keywords content><meta name=description content='在跟随网上的教程搭建中，我发现了许多的问题，所以决定自己写一篇搭建教程
+我会把自己遇到的问题详细的列出来，并给予解决方案
+第一步，安装Hugo
+1.浏览官方的使用指南
+本次部署使用的是Windows系统
+如果你对操作有些困惑，这份指南有对其他系统如何安装Hugo的详细说明
+在这里我选择了使用对新手比较友好的方式，从GitHub主页下载zip包下载后添加到环境变量
+找到并点击Releases选择适合自己的安装包
+
+
+Windows系统选择带有Windows字样的安装包
+
+
+下载后解压到适合的文件夹,找到bin文件，复制路径到环境变量中
+
+至此，Hugo就安装完毕了！
+第二步，新建一个Hugo网站
+1.进入你想存放Hugo网站文件的文件夹，在文件夹下使用终端(cmd)执行以下命令新建一个Hugo网站
+
+
+1
+
+
+hugo new site myblog  # "myblog" 是我的网站文件夹名
+
+
+2.选择Hugo主题并克隆至本地目录
+打开 Hugo Themes 页面，选择一个你喜欢的主题
+我选择的是PaperModX主题
+进入themes文件夹
+将所选主题克隆到本地(themes文件夹下)
+
+点击复制按钮，执行
+
+
+1
+
+
+git clone 复制得到的链接
+
+
+clone成功后，还需要修改文件夹名为你的主题名才可正常运转，在这里我修改文件名为PaperModX
+
+
+3.编辑配置文件
+编辑文件是Hugo自定义的灵魂所在，值得各位研究,官方提供了英文文档,更有第三方的中文文档,也可以仿照他人的范例进行修改，
+4.新建一篇文章
+
+
+进入网站文件夹的根目录
+使用以下命令新建一篇文章
+
+
+1
+
+
+hugo new post/my-first-post.md # "my-first-post.md"是新建文章的文件名
+
+
+
+
+这里我采用另一种方法，来自这位大佬的博客
+思路是每一篇文章都创建一个新的文件夹，将所需要的图片放在文件夹下
+而不用使用Hugo传统的把图片放在其他文件夹，方便了引用
+注意：文件夹下的文章需命名为index.md，否则无法识别
+
+
+5.编辑新建的文章，添加内容并保存
+6.本地预览网页效果
+启动Hugo server
+
+
+1
+
+
+hugo server -D
+
+
+
+使用浏览器打开 http://localhost:1313 预览'><meta name=author content="LOTU$"><link rel=canonical href=https://blog.lotussb.com/posts/hugo_deploy/><link crossorigin=anonymous href=/assets/css/stylesheet.54405a410796490bc874ab6181fac9b675753cc2b91375d8f882566459eca428.css integrity="sha256-VEBaQQeWSQvIdKthgfrJtnV1PMK5E3XY+IJWZFnspCg=" rel="preload stylesheet" as=style><link rel=icon href=https://blog.lotussb.com/%3C/favicon.ico%3E><link rel=icon type=image/png sizes=16x16 href=https://blog.lotussb.com/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://blog.lotussb.com/favicon-32x32.png><link rel=apple-touch-icon href=https://blog.lotussb.com/apple-touch-icon.png><link rel=mask-icon href=https://blog.lotussb.com/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=https://blog.lotussb.com/posts/hugo_deploy/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:title" content="Hugo+Github Pages搭建"><meta property="og:description" content='在跟随网上的教程搭建中，我发现了许多的问题，所以决定自己写一篇搭建教程
+我会把自己遇到的问题详细的列出来，并给予解决方案
+第一步，安装Hugo
+1.浏览官方的使用指南
+本次部署使用的是Windows系统
+如果你对操作有些困惑，这份指南有对其他系统如何安装Hugo的详细说明
+在这里我选择了使用对新手比较友好的方式，从GitHub主页下载zip包下载后添加到环境变量
+找到并点击Releases选择适合自己的安装包
+
+
+Windows系统选择带有Windows字样的安装包
+
+
+下载后解压到适合的文件夹,找到bin文件，复制路径到环境变量中
+
+至此，Hugo就安装完毕了！
+第二步，新建一个Hugo网站
+1.进入你想存放Hugo网站文件的文件夹，在文件夹下使用终端(cmd)执行以下命令新建一个Hugo网站
+
+
+1
+
+
+hugo new site myblog  # "myblog" 是我的网站文件夹名
+
+
+2.选择Hugo主题并克隆至本地目录
+打开 Hugo Themes 页面，选择一个你喜欢的主题
+我选择的是PaperModX主题
+进入themes文件夹
+将所选主题克隆到本地(themes文件夹下)
+
+点击复制按钮，执行
+
+
+1
+
+
+git clone 复制得到的链接
+
+
+clone成功后，还需要修改文件夹名为你的主题名才可正常运转，在这里我修改文件名为PaperModX
+
+
+3.编辑配置文件
+编辑文件是Hugo自定义的灵魂所在，值得各位研究,官方提供了英文文档,更有第三方的中文文档,也可以仿照他人的范例进行修改，
+4.新建一篇文章
+
+
+进入网站文件夹的根目录
+使用以下命令新建一篇文章
+
+
+1
+
+
+hugo new post/my-first-post.md # "my-first-post.md"是新建文章的文件名
+
+
+
+
+这里我采用另一种方法，来自这位大佬的博客
+思路是每一篇文章都创建一个新的文件夹，将所需要的图片放在文件夹下
+而不用使用Hugo传统的把图片放在其他文件夹，方便了引用
+注意：文件夹下的文章需命名为index.md，否则无法识别
+
+
+5.编辑新建的文章，添加内容并保存
+6.本地预览网页效果
+启动Hugo server
+
+
+1
+
+
+hugo server -D
+
+
+
+使用浏览器打开 http://localhost:1313 预览'><meta property="og:type" content="article"><meta property="og:url" content="https://blog.lotussb.com/posts/hugo_deploy/"><meta property="og:image" content="https://blog.lotussb.com/Hugo.png"><meta property="article:section" content="posts"><meta property="article:published_time" content="2023-03-17T12:30:19+08:00"><meta property="article:modified_time" content="2023-03-17T12:30:19+08:00"><meta property="og:site_name" content="LOTU$的个人博客"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://blog.lotussb.com/Hugo.png"><meta name=twitter:title content="Hugo+Github Pages搭建"><meta name=twitter:description content='在跟随网上的教程搭建中，我发现了许多的问题，所以决定自己写一篇搭建教程
+我会把自己遇到的问题详细的列出来，并给予解决方案
+第一步，安装Hugo
+1.浏览官方的使用指南
+本次部署使用的是Windows系统
+如果你对操作有些困惑，这份指南有对其他系统如何安装Hugo的详细说明
+在这里我选择了使用对新手比较友好的方式，从GitHub主页下载zip包下载后添加到环境变量
+找到并点击Releases选择适合自己的安装包
+
+
+Windows系统选择带有Windows字样的安装包
+
+
+下载后解压到适合的文件夹,找到bin文件，复制路径到环境变量中
+
+至此，Hugo就安装完毕了！
+第二步，新建一个Hugo网站
+1.进入你想存放Hugo网站文件的文件夹，在文件夹下使用终端(cmd)执行以下命令新建一个Hugo网站
+
+
+1
+
+
+hugo new site myblog  # "myblog" 是我的网站文件夹名
+
+
+2.选择Hugo主题并克隆至本地目录
+打开 Hugo Themes 页面，选择一个你喜欢的主题
+我选择的是PaperModX主题
+进入themes文件夹
+将所选主题克隆到本地(themes文件夹下)
+
+点击复制按钮，执行
+
+
+1
+
+
+git clone 复制得到的链接
+
+
+clone成功后，还需要修改文件夹名为你的主题名才可正常运转，在这里我修改文件名为PaperModX
+
+
+3.编辑配置文件
+编辑文件是Hugo自定义的灵魂所在，值得各位研究,官方提供了英文文档,更有第三方的中文文档,也可以仿照他人的范例进行修改，
+4.新建一篇文章
+
+
+进入网站文件夹的根目录
+使用以下命令新建一篇文章
+
+
+1
+
+
+hugo new post/my-first-post.md # "my-first-post.md"是新建文章的文件名
+
+
+
+
+这里我采用另一种方法，来自这位大佬的博客
+思路是每一篇文章都创建一个新的文件夹，将所需要的图片放在文件夹下
+而不用使用Hugo传统的把图片放在其他文件夹，方便了引用
+注意：文件夹下的文章需命名为index.md，否则无法识别
+
+
+5.编辑新建的文章，添加内容并保存
+6.本地预览网页效果
+启动Hugo server
+
+
+1
+
+
+hugo server -D
+
+
+
+使用浏览器打开 http://localhost:1313 预览'><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://blog.lotussb.com/posts/"},{"@type":"ListItem","position":2,"name":"Hugo+Github Pages搭建","item":"https://blog.lotussb.com/posts/hugo_deploy/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Hugo+Github Pages搭建","name":"Hugo\u002bGithub Pages搭建","description":"在跟随网上的教程搭建中，我发现了许多的问题，所以决定自己写一篇搭建教程\n我会把自己遇到的问题详细的列出来，并给予解决方案\n第一步，安装Hugo 1.浏览官方的使用指南\n本次部署使用的是Windows系统\n如果你对操作有些困惑，这份指南有对其他系统如何安装Hugo的详细说明\n在这里我选择了使用对新手比较友好的方式，从GitHub主页下载zip包下载后添加到环境变量\n找到并点击Releases选择适合自己的安装包 Windows系统选择带有Windows字样的安装包 下载后解压到适合的文件夹,找到bin文件，复制路径到环境变量中 至此，Hugo就安装完毕了！\n第二步，新建一个Hugo网站 1.进入你想存放Hugo网站文件的文件夹，在文件夹下使用终端(cmd)执行以下命令新建一个Hugo网站\n1 hugo new site myblog # \u0026#34;myblog\u0026#34; 是我的网站文件夹名 2.选择Hugo主题并克隆至本地目录\n打开 Hugo Themes 页面，选择一个你喜欢的主题\n我选择的是PaperModX主题\n进入themes文件夹\n将所选主题克隆到本地(themes文件夹下) 点击复制按钮，执行\n1 git clone 复制得到的链接 clone成功后，还需要修改文件夹名为你的主题名才可正常运转，在这里我修改文件名为PaperModX 3.编辑配置文件\n编辑文件是Hugo自定义的灵魂所在，值得各位研究,官方提供了英文文档,更有第三方的中文文档,也可以仿照他人的范例进行修改，\n4.新建一篇文章\n进入网站文件夹的根目录\n使用以下命令新建一篇文章\n1 hugo new post/my-first-post.md # \u0026#34;my-first-post.md\u0026#34;是新建文章的文件名 这里我采用另一种方法，来自这位大佬的博客\n思路是每一篇文章都创建一个新的文件夹，将所需要的图片放在文件夹下\n而不用使用Hugo传统的把图片放在其他文件夹，方便了引用\n注意：文件夹下的文章需命名为index.md，否则无法识别\n5.编辑新建的文章，添加内容并保存\n6.本地预览网页效果\n启动Hugo server\n1 hugo server -D 使用浏览器打开 http://localhost:1313 预览\n","keywords":[],"articleBody":"在跟随网上的教程搭建中，我发现了许多的问题，所以决定自己写一篇搭建教程\n我会把自己遇到的问题详细的列出来，并给予解决方案\n第一步，安装Hugo 1.浏览官方的使用指南\n本次部署使用的是Windows系统\n如果你对操作有些困惑，这份指南有对其他系统如何安装Hugo的详细说明\n在这里我选择了使用对新手比较友好的方式，从GitHub主页下载zip包下载后添加到环境变量\n找到并点击Releases选择适合自己的安装包 Windows系统选择带有Windows字样的安装包 下载后解压到适合的文件夹,找到bin文件，复制路径到环境变量中 至此，Hugo就安装完毕了！\n第二步，新建一个Hugo网站 1.进入你想存放Hugo网站文件的文件夹，在文件夹下使用终端(cmd)执行以下命令新建一个Hugo网站\n1 hugo new site myblog # \"myblog\" 是我的网站文件夹名 2.选择Hugo主题并克隆至本地目录\n打开 Hugo Themes 页面，选择一个你喜欢的主题\n我选择的是PaperModX主题\n进入themes文件夹\n将所选主题克隆到本地(themes文件夹下) 点击复制按钮，执行\n1 git clone 复制得到的链接 clone成功后，还需要修改文件夹名为你的主题名才可正常运转，在这里我修改文件名为PaperModX 3.编辑配置文件\n编辑文件是Hugo自定义的灵魂所在，值得各位研究,官方提供了英文文档,更有第三方的中文文档,也可以仿照他人的范例进行修改，\n4.新建一篇文章\n进入网站文件夹的根目录\n使用以下命令新建一篇文章\n1 hugo new post/my-first-post.md # \"my-first-post.md\"是新建文章的文件名 这里我采用另一种方法，来自这位大佬的博客\n思路是每一篇文章都创建一个新的文件夹，将所需要的图片放在文件夹下\n而不用使用Hugo传统的把图片放在其他文件夹，方便了引用\n注意：文件夹下的文章需命名为index.md，否则无法识别\n5.编辑新建的文章，添加内容并保存\n6.本地预览网页效果\n启动Hugo server\n1 hugo server -D 使用浏览器打开 http://localhost:1313 预览\n如果你对预览效果满意，进入下一步。 如果不满意，编辑 config.toml 配置文件，再次预览。 在对你的网站满意后，可以进行上传到Github Pages了\n第三步，上传到Github Pasges 1.新建一个Github库\n打开 GitHub Pages 官网，浏览并了解 User or organization site 部分对应的操作步骤。\nGitHub Pages: https://pages.github.com\n新建一个 GitHub repository，库名为 username.http://github.io，\nusername 即你的 GitHub 账号 username。新建 repository：https://github.com/new\n例如，在我的Repository name处就填入LOTUSSSB.github.io\n注意：创建后需要更改Branch的路径，否则可能无法上传！\n在仓库的设置中找到Branches一栏，并改Defaul branch为master\n2.在Hugo的网站根目录下，执行hugo命令来构建上传到GitHub的静态页面\n1 hugo # 构建你的 Hugo 网站，默认将静态站点保存到 \"public\" 目录。 3.进入public文件夹，初始化git库\n1 git init # 初始化 Git 库 4.将 Git 本地库关联至远程库\n在public目录下，为Git 本地库添加远程库\n1 git remote add origin git@github.com:LOTUSSSB/LOTUSSSB.github.io.git # \"LOTUSSSB/LOTUSSSB.github.io.git\" 代表 \"your-github-id/your-github-id.github.io.git\"。 查看 config 文件\n1 cat .git/config # 显示 config 信息。 上述命令结果返回如下：\n1 2 3 4 5 6 7 8 9 10 [core] repositoryformatversion = 0 filemode = true bare = false logallrefupdates = true ignorecase = true precomposeunicode = true [remote \"origin\"] url = git@github.com:LOTUSSSB/LOTUSSSB.github.io.git fetch = +refs/heads/*:refs/remotes/origin/* 如果 [remote “origin”] 信息正常显示，说明你的 Git 本地库已成功关联至远程库\n5.提交你的修改至本地库\n在public文件下，通过commit提交修改,并写一个 commit message 来简洁描述你的修改\n1 2 3 git status # 查看当前修改状态。 git add . # 添加所有修改过的文件。你也可以只添加某个文件。 git commit -m \"Add a new post\" # \"Add a new post\" 是 commit message. 6.将你的修改推至远程库 在public文件下，将修改推至远程库\n1 git push -u origin master 查看你的Github仓库是否已经上传成功，若成功\n恭喜！现在你已经走完了全程，拥有了一个自己构建的博客网站!\n访问 https://你的用户名.github.io 来访问吧！\n后续文章更新 Hugo更新文章的方法比较麻烦，需要重新在网站根目录执行\n1 hugo new post/你想要的文章名字.md 如果你采用的是上面建议的文章和图片放一起的方式，则需要执行\n1 hugo new post/index.md 并且重新手动创建一个文件夹来存放新的文章\n添加文章完成后，需要重新构建站点，在网站根目录下执行\n1 hugo -D 这样就能重新构建新的文件到public文件了\n完成后执行\n1 2 3 git status # 查看当前修改状态。 git add . # 添加所有修改过的文件。你也可以只添加某个文件。 git commit -m \"Add a new new post\" # \"Add a new new post\" 提交到本地\n再通过push上传即可\n1 git push -u origin master ","wordCount":"280","inLanguage":"en","image":"https://blog.lotussb.com/Hugo.png","datePublished":"2023-03-17T12:30:19+08:00","dateModified":"2023-03-17T12:30:19+08:00","author":{"@type":"Person","name":"LOTU$"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.lotussb.com/posts/hugo_deploy/"},"publisher":{"@type":"Organization","name":"LOTUS BLOG","logo":{"@type":"ImageObject","url":"https://blog.lotussb.com/%3C/favicon.ico%3E"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://blog.lotussb.com/ accesskey=h title="LOTUS BLOG (Alt + H)"><img src=https://blog.lotussb.com/apple-touch-icon.png alt aria-label=logo height=35>LOTUS BLOG</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://blog.lotussb.com/search/ title="搜索 (Alt + /)" accesskey=/><span>搜索</span></a></li><li><a href=https://blog.lotussb.com/archives/ title=归档><span>归档</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://blog.lotussb.com/>Home</a>&nbsp;»&nbsp;<a href=https://blog.lotussb.com/posts/>Posts</a></div><h1 class="post-title entry-hint-parent">Hugo+Github Pages搭建</h1><div class=post-meta><span title='2023-03-17 12:30:19 +0800 CST'>March 17, 2023</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;280 words&nbsp;·&nbsp;LOTU$</div></header><div class=toc><details open><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><nav id=TableOfContents><ul><li><a href=#第一步安装hugo>第一步，安装Hugo</a></li><li><a href=#第二步新建一个hugo网站>第二步，新建一个Hugo网站</a></li><li><a href=#第三步上传到github-pasges>第三步，上传到Github Pasges</a></li><li><a href=#后续文章更新>后续文章更新</a></li></ul></nav></div></details></div><div class=post-content><p>在跟随网上的教程搭建中，我发现了许多的问题，所以决定自己写一篇搭建教程</p><p>我会把自己遇到的问题详细的列出来，并给予解决方案</p><h2 id=第一步安装hugo>第一步，安装Hugo<a hidden class=anchor aria-hidden=true href=#第一步安装hugo>#</a></h2><p>1.浏览官方的<a href=https://gohugo.io/installation/>使用指南</a></p><p>本次部署使用的是Windows系统</p><p>如果你对操作有些困惑，这份<a href=https://gohugo.io/installation/>指南</a>有对其他系统如何安装Hugo的详细说明</p><p>在这里我选择了使用对新手比较友好的方式，从<a href=https://github.com/gohugoio/hugo>GitHub主页</a>下载zip包下载后添加到环境变量</p><p>找到并点击<strong>Releases</strong>选择适合自己的安装包
+<img loading=lazy src=20230317144933.png alt></p><p>Windows系统选择带有<strong>Windows</strong>字样的安装包
+<img loading=lazy src=20230317145158.png alt=带有Windows字样></p><p>下载后解压到适合的文件夹,找到<strong>bin文件</strong>，<strong>复制路径到环境变量中</strong>
+<img src=20230317145641.png style=zoom:50%></p><p>至此，Hugo就安装完毕了！</p><h2 id=第二步新建一个hugo网站>第二步，新建一个Hugo网站<a hidden class=anchor aria-hidden=true href=#第二步新建一个hugo网站>#</a></h2><p>1.进入你想存放Hugo网站文件的文件夹，<strong>在文件夹下</strong>使用终端(cmd)执行以下命令新建一个Hugo网站</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>hugo new site myblog  <span class=c1># &#34;myblog&#34; 是我的网站文件夹名</span>
+</span></span></code></pre></td></tr></table></div></div><p>2.选择Hugo主题并克隆至本地目录</p><p>打开 <a href=https://themes.gohugo.io/>Hugo Themes</a> 页面，选择一个你喜欢的主题</p><p>我选择的是<a href=https://github.com/kahnwong/hugo-PaperModX>PaperModX</a>主题</p><p><strong>进入themes文件夹</strong></p><p>将所选主题克隆到本地(themes文件夹下)
+<img src=20230317151600.png style=zoom:67%></p><p>点击复制按钮，执行</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>git clone 复制得到的链接
+</span></span></code></pre></td></tr></table></div></div><p><strong>clone成功后，还需要修改文件夹名为你的主题名才可正常运转</strong>，在这里我修改文件名为PaperModX
+<img loading=lazy src=20230317152600.png alt></p><p>3.编辑配置文件</p><p>编辑文件是Hugo自定义的灵魂所在，值得各位研究,官方提供了<a href=https://adityatelange.github.io/hugo-PaperMod/>英文文档</a>,更有第三方的<a href=https://note.ftls.xyz/papermod/>中文文档</a>,也可以仿照他人的<a href=https://adityatelange.github.io/hugo-PaperMod/>范例</a>进行修改，</p><p>4.新建一篇文章</p><ul><li><p>进入网站文件夹的根目录</p><p>使用以下命令新建一篇文章</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>hugo new post/my-first-post.md <span class=c1># &#34;my-first-post.md&#34;是新建文章的文件名</span>
+</span></span></code></pre></td></tr></table></div></div></li><li><p>这里我采用另一种方法，来自这位<a href=https://wrong.wang/blog/20190301-%E6%9C%AC%E7%AB%99%E5%BC%95%E7%94%A8%E5%9B%BE%E7%89%87%E7%9A%84%E9%A1%BA%E6%BB%91%E6%B5%81%E7%A8%8B/>大佬的博客</a></p><p>思路是<strong>每一篇文章都创建一个新的文件夹</strong>，将所需要的<strong>图片放在文件夹下</strong></p><p>而不用使用Hugo传统的把图片放在其他文件夹，方便了引用</p><p><strong>注意：文件夹下的文章需命名为index.md，否则无法识别</strong></p></li></ul><p>5.编辑新建的文章，添加内容并保存</p><p>6.本地预览网页效果</p><p>启动Hugo server</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>hugo server -D
+</span></span></code></pre></td></tr></table></div></div><img src=20230317155100.png style=zoom:67%><p>使用浏览器打开 http://localhost:1313 预览</p><ul><li>如果你对预览效果满意，进入下一步。</li><li>如果不满意，编辑 <code>config.toml</code> 配置文件，再次预览。</li></ul><p>在对你的网站满意后，可以进行上传到Github Pages了</p><h2 id=第三步上传到github-pasges>第三步，上传到Github Pasges<a hidden class=anchor aria-hidden=true href=#第三步上传到github-pasges>#</a></h2><p>1.新建一个Github库</p><p>打开 GitHub Pages 官网，浏览并了解 User or organization site 部分对应的操作步骤。</p><p>GitHub Pages: <a href="https://link.zhihu.com/?target=https%3A//pages.github.com/">https://pages.github.com</a></p><p>新建一个 GitHub repository，库名为 <em>username</em>.<a href="https://link.zhihu.com/?target=http%3A//github.io">http://github.io</a>，</p><p>username 即你的 GitHub 账号 username。新建 repository：<a href="https://link.zhihu.com/?target=https%3A//github.com/new">https://github.com/new</a></p><p><strong>例如</strong>，<strong>在我的Repository name处就填入LOTUSSSB.github.io</strong></p><img src=20230317160242.png style=zoom:67%><p><strong>注意：创建后需要更改Branch的路径，否则可能无法上传！</strong></p><p>在仓库的设置中找到<strong>Branches</strong>一栏，并<strong>改Defaul branch为master</strong></p><p><img loading=lazy src=20230317161002.png alt></p><p>2.在Hugo的网站根目录下，执行hugo命令来构建上传到GitHub的静态页面</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>hugo  <span class=c1># 构建你的 Hugo 网站，默认将静态站点保存到 &#34;public&#34; 目录。</span>
+</span></span></code></pre></td></tr></table></div></div><p>3.进入public文件夹，初始化git库</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>git init  <span class=c1># 初始化 Git 库</span>
+</span></span></code></pre></td></tr></table></div></div><p>4.将 Git 本地库关联至远程库</p><p>在public目录下，为Git 本地库添加远程库</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>git remote add origin git@github.com:LOTUSSSB/LOTUSSSB.github.io.git  <span class=c1># &#34;LOTUSSSB/LOTUSSSB.github.io.git&#34; 代表 &#34;your-github-id/your-github-id.github.io.git&#34;。</span>
+</span></span></code></pre></td></tr></table></div></div><p>查看 config 文件</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>cat .git/config  <span class=c1># 显示 config 信息。</span>
+</span></span></code></pre></td></tr></table></div></div><p>上述命令结果返回如下：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=o>[</span>core<span class=o>]</span>
+</span></span><span class=line><span class=cl>    <span class=nv>repositoryformatversion</span> <span class=o>=</span> <span class=m>0</span>
+</span></span><span class=line><span class=cl>    <span class=nv>filemode</span> <span class=o>=</span> <span class=nb>true</span>
+</span></span><span class=line><span class=cl>    <span class=nv>bare</span> <span class=o>=</span> <span class=nb>false</span>
+</span></span><span class=line><span class=cl>    <span class=nv>logallrefupdates</span> <span class=o>=</span> <span class=nb>true</span>
+</span></span><span class=line><span class=cl>    <span class=nv>ignorecase</span> <span class=o>=</span> <span class=nb>true</span>
+</span></span><span class=line><span class=cl>    <span class=nv>precomposeunicode</span> <span class=o>=</span> <span class=nb>true</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>remote <span class=s2>&#34;origin&#34;</span><span class=o>]</span>
+</span></span><span class=line><span class=cl>    <span class=nv>url</span> <span class=o>=</span> git@github.com:LOTUSSSB/LOTUSSSB.github.io.git
+</span></span><span class=line><span class=cl>    <span class=nv>fetch</span> <span class=o>=</span> +refs/heads/*:refs/remotes/origin/*
+</span></span></code></pre></td></tr></table></div></div><p>如果 [remote &ldquo;origin&rdquo;] 信息正常显示，说明你的 Git 本地库已成功关联至远程库</p><p>5.提交你的修改至本地库</p><p>在public文件下，通过commit提交修改,并写一个 commit message 来简洁描述你的修改</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>git status  <span class=c1># 查看当前修改状态。</span>
+</span></span><span class=line><span class=cl>git add .  <span class=c1># 添加所有修改过的文件。你也可以只添加某个文件。</span>
+</span></span><span class=line><span class=cl>git commit -m <span class=s2>&#34;Add a new post&#34;</span>  <span class=c1># &#34;Add a new post&#34; 是 commit message.</span>
+</span></span></code></pre></td></tr></table></div></div><p>6.将你的修改推至远程库
+在public文件下，将修改推至远程库</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>git push -u origin master
+</span></span></code></pre></td></tr></table></div></div><p>查看你的Github仓库是否已经上传成功，若成功</p><p><strong>恭喜！现在你已经走完了全程，拥有了一个自己构建的博客网站!</strong></p><p>访问 https://你的用户名.github.io 来访问吧！</p><h2 id=后续文章更新>后续文章更新<a hidden class=anchor aria-hidden=true href=#后续文章更新>#</a></h2><p>Hugo更新文章的方法比较麻烦，需要重新在网站根目录执行</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>hugo new post/你想要的文章名字.md
+</span></span></code></pre></td></tr></table></div></div><p>如果你采用的是上面建议的文章和图片放一起的方式，则需要执行</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>hugo new post/index.md
+</span></span></code></pre></td></tr></table></div></div><p>并且<strong>重新手动创建一个文件夹</strong>来存放新的文章</p><p>添加文章完成后，需要重新构建站点，在网站根目录下执行</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>hugo -D
+</span></span></code></pre></td></tr></table></div></div><p>这样就能重新构建新的文件到public文件了</p><p>完成后执行</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>git status  <span class=c1># 查看当前修改状态。</span>
+</span></span><span class=line><span class=cl>git add .  <span class=c1># 添加所有修改过的文件。你也可以只添加某个文件。</span>
+</span></span><span class=line><span class=cl>git commit -m <span class=s2>&#34;Add a new  new post&#34;</span>  <span class=c1># &#34;Add a new new post&#34; </span>
+</span></span></code></pre></td></tr></table></div></div><p>提交到本地</p><p>再通过push上传即可</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>git push -u origin master
+</span></span></code></pre></td></tr></table></div></div></div><footer class=post-footer><ul class=post-tags></ul><nav class=paginav><a class=prev href=https://blog.lotussb.com/posts/web3_learing/><span class=title>« Prev</span><br><span>Web3学习</span>
+</a><a class=next href=https://blog.lotussb.com/posts/linux_learning/><span class=title>Next »</span><br><span>Linux学习🐧</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2024 <a href=https://blog.lotussb.com/>LOTUS BLOG</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>
